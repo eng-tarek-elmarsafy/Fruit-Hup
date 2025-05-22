@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:fruit_hup/features/splash/presentation/views/widgets/splash_view_body.dart';
 
 class SplashView extends StatelessWidget {
-  static const String id = '/splash';
   const SplashView({super.key});
+  static const String id = '/splash';
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: SplashViewBody());
+    return const Scaffold(body: SplashViewBody());
   }
 }
