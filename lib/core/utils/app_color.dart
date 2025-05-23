@@ -20,7 +20,7 @@ class AppColor {
   static const green200 = Color(0xFFBEF4A9);
   static const green300 = Color(0xFF9DE77E);
   static const green400 = Color(0xFF76DF53);
-  static const green500 = Color(0xFF6CDC46);
+  static const green500 = Color(0xFF5DB957);
   static const green600 = Color(0xFF43AC20);
   static const green700 = Color(0xFF328118);
   static const green800 = Color(0xFF225610);
@@ -46,7 +46,7 @@ class AppColor {
   static const green1_200 = Color(0xFFB5F0D8);
   static const green1_300 = Color(0xFF77E6C9);
   static const green1_400 = Color(0xFF27D7A5);
-  static const green1_500 = Color(0xFF12B57F);
+  static const green1_500 = Color(0xFF1B5E37);
   static const green1_600 = Color(0xFF009D5C);
   static const green1_700 = Color(0xFF0B7E49);
   static const green1_800 = Color(0xFF085F3D);

@@ -93,6 +93,16 @@ class S {
   String get title2 {
     return Intl.message('Search and shop', name: 'title2', desc: '', args: []);
   }
+
+  /// `Skip`
+  String get Skip {
+    return Intl.message('Skip', name: 'Skip', desc: '', args: []);
+  }
+
+  /// `Get Started`
+  String get GetStarted {
+    return Intl.message('Get Started', name: 'GetStarted', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

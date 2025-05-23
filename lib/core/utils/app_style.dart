@@ -97,6 +97,7 @@ class AppStyle {
   static const basaBold = TextStyle(
     fontFamily: 'Cairo',
     fontWeight: FontWeight.bold,
+    color: Colors.white,
     fontSize: 16,
     height: 1.4,
   );
@@ -110,7 +111,7 @@ class AppStyle {
 
   static const smallBold = TextStyle(
     fontFamily: 'Cairo',
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w600,
     fontSize: 13,
     height: 1.7,
   );

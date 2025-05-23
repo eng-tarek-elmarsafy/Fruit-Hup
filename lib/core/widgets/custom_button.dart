@@ -1,0 +1,33 @@
+import 'dart:developer';
+
+import 'package:flutter/material.dart';
+import 'package:fruit_hup/core/utils/app_color.dart';
+import 'package:fruit_hup/core/utils/app_style.dart';
+
+class CustomButton extends StatelessWidget {
+  const CustomButton({super.key, required this.title});
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: MediaQuery.sizeOf(context).width,
+      height: 54,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppColor.green1_500,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+          ),
+          onPressed: () {
+            log(title);
+          },
+          child: Text(title, style: AppStyle.basaBold),
+        ),
+      ),
+    );
+  }
+}
