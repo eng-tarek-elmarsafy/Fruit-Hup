@@ -26,6 +26,12 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
     super.initState();
   }
 
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
   void _currentPageListener() {
     setState(() {
       currentPage = controller.page?.round() ?? 0;
