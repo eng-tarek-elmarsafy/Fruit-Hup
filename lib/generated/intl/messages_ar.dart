@@ -25,8 +25,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "Fruit": MessageLookupByLibrary.simpleMessage("Fruit"),
     "HUB": MessageLookupByLibrary.simpleMessage("HUB"),
     "hello": MessageLookupByLibrary.simpleMessage("مرحبًا بك في"),
-    "onboardingSuptitil": MessageLookupByLibrary.simpleMessage(
+    "onboardingSuptitil1": MessageLookupByLibrary.simpleMessage(
       "اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.",
     ),
+    "onboardingSuptitil2": MessageLookupByLibrary.simpleMessage(
+      "نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية",
+    ),
+    "title2": MessageLookupByLibrary.simpleMessage("ابحث وتسوق"),
   };
 }

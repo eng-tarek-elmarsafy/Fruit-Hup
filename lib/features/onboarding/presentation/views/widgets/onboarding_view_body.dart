@@ -1,27 +1,36 @@
-import 'package:flutter/material.dart';
-import 'package:fruit_hup/core/utils/assets.dart';
-import 'package:fruit_hup/features/onboarding/presentation/manager/models/onboarding_view_model.dart';
-import 'package:fruit_hup/features/onboarding/presentation/views/widgets/onboarding_item.dart';
-import 'package:fruit_hup/features/onboarding/presentation/views/widgets/onboarding_title.dart';
-import 'package:fruit_hup/generated/l10n.dart';
+import 'dart:developer';
 
-class OnboardingViewBody extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:fruit_hup/features/onboarding/presentation/views/widgets/custom_page_view.dart';
+
+class OnboardingViewBody extends StatefulWidget {
   const OnboardingViewBody({super.key});
 
   @override
+  State<OnboardingViewBody> createState() => _OnboardingViewBodyState();
+}
+
+class _OnboardingViewBodyState extends State<OnboardingViewBody> {
+  late final PageController controller;
+  int currentPage = 0;
+
+  @override
+  void initState() {
+    controller = PageController();
+    controller.addListener(() {
+      setState(() {
+        currentPage = controller.page?.round() ?? 0;
+      });
+    });
+
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return OnboardingItem(
-      onboardingViewModel: OnboardingViewModel(
-        onboardingBackgrondImage: Assets.imageOnboardingBackgrund1,
-        image: Assets.imageOnboarding1,
-        subtitle: S.of(context).onboardingSuptitil,
-        title: const OnbordingTitle1(),
-      ),
+    log(currentPage.toString());
+    return Column(
+      children: [Expanded(child: CustomPageView(controller: controller))],
     );
   }
 }
-
-
-
-
-

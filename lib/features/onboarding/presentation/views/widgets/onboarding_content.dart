@@ -13,7 +13,7 @@ class OnboardingContent extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 37),
       child: Column(
         children: [
-          const OnbordingTitle1(),
+          onboardingViewModel.title,
           const SizedBox(height: 24),
           Text(
             onboardingViewModel.subtitle,

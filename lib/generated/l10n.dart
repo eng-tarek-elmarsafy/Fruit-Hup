@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:fruit_hup/generated/intl/messages_all.dart';
+import 'intl/messages_all.dart';
 
 // **************************************************************************
 // Generator: Flutter Intl IDE plugin
@@ -28,10 +28,9 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name =
-        (locale.countryCode?.isEmpty ?? false)
-            ? locale.languageCode
-            : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -71,13 +70,28 @@ class S {
   }
 
   /// `Discover a unique shopping experience with FruitHUB. Explore our wide selection of premium fresh fruits and enjoy the best deals and top quality.`
-  String get onboardingSuptitil {
+  String get onboardingSuptitil1 {
     return Intl.message(
       'Discover a unique shopping experience with FruitHUB. Explore our wide selection of premium fresh fruits and enjoy the best deals and top quality.',
-      name: 'onboardingSuptitil',
+      name: 'onboardingSuptitil1',
       desc: '',
       args: [],
     );
+  }
+
+  /// `We bring you the finest, carefully selected fruits. Check out the details, photos, and reviews to make sure you’re choosing the perfect fruit.`
+  String get onboardingSuptitil2 {
+    return Intl.message(
+      'We bring you the finest, carefully selected fruits. Check out the details, photos, and reviews to make sure you’re choosing the perfect fruit.',
+      name: 'onboardingSuptitil2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search and shop`
+  String get title2 {
+    return Intl.message('Search and shop', name: 'title2', desc: '', args: []);
   }
 }
 
