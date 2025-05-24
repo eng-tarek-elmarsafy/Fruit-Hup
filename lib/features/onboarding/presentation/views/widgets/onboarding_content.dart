@@ -16,7 +16,7 @@ class OnboardingContent extends StatelessWidget {
           const SizedBox(height: 24),
           Text(
             onboardingViewModel.subtitle,
-            style: AppStyle.smallBold.copyWith(color: AppColor.gray500),
+            style: AppStyle.smallBold.copyWith(color: const Color(0xff4E5456)),
             textAlign: TextAlign.center,
           ),
         ],
