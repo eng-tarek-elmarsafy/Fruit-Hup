@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fruit_hup/constens.dart';
 import 'package:fruit_hup/core/helper/is_arabic.dart';
+import 'package:fruit_hup/core/services/shared_preferences.dart';
 import 'package:fruit_hup/core/utils/assets.dart';
+import 'package:fruit_hup/features/auth/presentation/views/login_view.dart';
 import 'package:fruit_hup/features/onboarding/presentation/views/onboarding_view.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -37,8 +40,13 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
   void excuteNaviagtion() {
     Future.delayed(const Duration(seconds: 3), () {
-      if (!mounted) return;
-      Navigator.pushReplacementNamed(context, OnboardingView.id);
+      if (Prefs.getBool(kIsOnboardingSeen)) {
+        if (!mounted) return;
+        Navigator.pushReplacementNamed(context, LoginView.id);
+      } else {
+        if (!mounted) return;
+        Navigator.pushReplacementNamed(context, OnboardingView.id);
+      }
     });
   }
 }

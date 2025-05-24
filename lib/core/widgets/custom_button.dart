@@ -1,13 +1,11 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:fruit_hup/core/utils/app_color.dart';
 import 'package:fruit_hup/core/utils/app_style.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.title});
+  const CustomButton({super.key, required this.title, required this.onPressed});
   final String title;
-
+  final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -22,9 +20,7 @@ class CustomButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(16),
             ),
           ),
-          onPressed: () {
-            log(title);
-          },
+          onPressed: onPressed,
           child: Text(title, style: AppStyle.basaBold),
         ),
       ),

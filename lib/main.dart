@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:fruit_hup/core/helper/on_generate_route_function.dart';
+import 'package:fruit_hup/core/services/shared_preferences.dart';
 import 'package:fruit_hup/features/splash/presentation/views/splash_view.dart';
 import 'package:fruit_hup/generated/l10n.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Prefs.inti();
   runApp(const FruitHub());
 }
 

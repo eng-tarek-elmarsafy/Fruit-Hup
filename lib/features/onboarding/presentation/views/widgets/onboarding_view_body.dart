@@ -1,8 +1,11 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:fruit_hup/constens.dart';
+import 'package:fruit_hup/core/services/shared_preferences.dart';
 import 'package:fruit_hup/core/utils/app_style.dart';
 import 'package:fruit_hup/core/widgets/custom_button.dart';
+import 'package:fruit_hup/features/auth/presentation/views/login_view.dart';
 import 'package:fruit_hup/features/onboarding/presentation/views/widgets/custom_page_view.dart';
 import 'package:fruit_hup/features/onboarding/presentation/views/widgets/dot_indicator.dart';
 import 'package:fruit_hup/generated/l10n.dart';
@@ -57,6 +60,8 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
                       ),
                       onPressed: () {
                         log(S.of(context).Skip);
+                        Prefs.setBool(kIsOnboardingSeen, true);
+                        Navigator.pushReplacementNamed(context, LoginView.id);
                       },
                     ),
                   ),
@@ -81,7 +86,13 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
             ? Positioned(
               top: MediaQuery.sizeOf(context).height * .801,
 
-              child: CustomButton(title: S.of(context).GetStarted),
+              child: CustomButton(
+                title: S.of(context).GetStarted,
+                onPressed: () {
+                  Prefs.setBool(kIsOnboardingSeen, true);
+                  Navigator.pushReplacementNamed(context, LoginView.id);
+                },
+              ),
             )
             : const SizedBox.shrink(),
       ],
