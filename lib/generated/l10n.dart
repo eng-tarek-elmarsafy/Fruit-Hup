@@ -103,6 +103,170 @@ class S {
   String get GetStarted {
     return Intl.message('Get Started', name: 'GetStarted', desc: '', args: []);
   }
+
+  /// `Login`
+  String get Login {
+    return Intl.message('Login', name: 'Login', desc: '', args: []);
+  }
+
+  /// `Create Account`
+  String get CreateAccount {
+    return Intl.message(
+      'Create Account',
+      name: 'CreateAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email Address`
+  String get EmailAddress {
+    return Intl.message(
+      'Email Address',
+      name: 'EmailAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get Password {
+    return Intl.message('Password', name: 'Password', desc: '', args: []);
+  }
+
+  // skipped getter for the 'ForgotPassword?' key
+
+  // skipped getter for the 'Don\'tHaveAnaccount?' key
+
+  /// `Sign in with Google`
+  String get GoogleSignIn {
+    return Intl.message(
+      'Sign in with Google',
+      name: 'GoogleSignIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in with Apple`
+  String get AppleSignIn {
+    return Intl.message(
+      'Sign in with Apple',
+      name: 'AppleSignIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in with Facebook`
+  String get FacebookSignIn {
+    return Intl.message(
+      'Sign in with Facebook',
+      name: 'FacebookSignIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Or`
+  String get Or {
+    return Intl.message('Or', name: 'Or', desc: '', args: []);
+  }
+
+  /// `Full Name`
+  String get FullName {
+    return Intl.message('Full Name', name: 'FullName', desc: '', args: []);
+  }
+
+  /// `Email`
+  String get Email {
+    return Intl.message('Email', name: 'Email', desc: '', args: []);
+  }
+
+  /// `By creating an account, you agree to our Terms and Conditions`
+  String get ByCreatingAnAccount {
+    return Intl.message(
+      'By creating an account, you agree to our Terms and Conditions',
+      name: 'ByCreatingAnAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create New Account`
+  String get CreateNewAccount {
+    return Intl.message(
+      'Create New Account',
+      name: 'CreateNewAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account? Login`
+  String get AlreadyHaveAnAccount {
+    return Intl.message(
+      'Already have an account? Login',
+      name: 'AlreadyHaveAnAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account?`
+  String get AlreadyHaveAnAccountOnly {
+    return Intl.message(
+      'Already have an account?',
+      name: 'AlreadyHaveAnAccountOnly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't worry, just enter your phone number and we will send a verification code.`
+  String get DontWorry {
+    return Intl.message(
+      'Don\'t worry, just enter your phone number and we will send a verification code.',
+      name: 'DontWorry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verify Code`
+  String get VerifyCode {
+    return Intl.message('Verify Code', name: 'VerifyCode', desc: '', args: []);
+  }
+
+  /// `Enter the code we sent to the following email address\nMaxxx@email.com`
+  String get EnterCodeSentToEmail {
+    return Intl.message(
+      'Enter the code we sent to the following email address\nMaxxx@email.com',
+      name: 'EnterCodeSentToEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check Code`
+  String get CheckCode {
+    return Intl.message('Check Code', name: 'CheckCode', desc: '', args: []);
+  }
+
+  /// `Resend Code`
+  String get ResendCode {
+    return Intl.message('Resend Code', name: 'ResendCode', desc: '', args: []);
+  }
+
+  /// `Password changed successfully`
+  String get PasswordChangedSuccessfully {
+    return Intl.message(
+      'Password changed successfully',
+      name: 'PasswordChangedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -22,10 +22,46 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "AlreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
+      "Already have an account? Login",
+    ),
+    "AlreadyHaveAnAccountOnly": MessageLookupByLibrary.simpleMessage(
+      "Already have an account?",
+    ),
+    "AppleSignIn": MessageLookupByLibrary.simpleMessage("Sign in with Apple"),
+    "ByCreatingAnAccount": MessageLookupByLibrary.simpleMessage(
+      "By creating an account, you agree to our Terms and Conditions",
+    ),
+    "CheckCode": MessageLookupByLibrary.simpleMessage("Check Code"),
+    "CreateAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
+    "CreateNewAccount": MessageLookupByLibrary.simpleMessage(
+      "Create New Account",
+    ),
+    "DontWorry": MessageLookupByLibrary.simpleMessage(
+      "Don\'t worry, just enter your phone number and we will send a verification code.",
+    ),
+    "Email": MessageLookupByLibrary.simpleMessage("Email"),
+    "EmailAddress": MessageLookupByLibrary.simpleMessage("Email Address"),
+    "EnterCodeSentToEmail": MessageLookupByLibrary.simpleMessage(
+      "Enter the code we sent to the following email address\nMaxxx@email.com",
+    ),
+    "FacebookSignIn": MessageLookupByLibrary.simpleMessage(
+      "Sign in with Facebook",
+    ),
     "Fruit": MessageLookupByLibrary.simpleMessage("Fruit"),
+    "FullName": MessageLookupByLibrary.simpleMessage("Full Name"),
     "GetStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
+    "GoogleSignIn": MessageLookupByLibrary.simpleMessage("Sign in with Google"),
     "HUB": MessageLookupByLibrary.simpleMessage("HUB"),
+    "Login": MessageLookupByLibrary.simpleMessage("Login"),
+    "Or": MessageLookupByLibrary.simpleMessage("Or"),
+    "Password": MessageLookupByLibrary.simpleMessage("Password"),
+    "PasswordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Password changed successfully",
+    ),
+    "ResendCode": MessageLookupByLibrary.simpleMessage("Resend Code"),
     "Skip": MessageLookupByLibrary.simpleMessage("Skip"),
+    "VerifyCode": MessageLookupByLibrary.simpleMessage("Verify Code"),
     "hello": MessageLookupByLibrary.simpleMessage("Welcome To "),
     "onboardingSuptitil1": MessageLookupByLibrary.simpleMessage(
       "Discover a unique shopping experience with FruitHUB. Explore our wide selection of premium fresh fruits and enjoy the best deals and top quality.",
