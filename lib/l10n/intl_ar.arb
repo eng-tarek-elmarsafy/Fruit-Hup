@@ -11,8 +11,8 @@
     "CreateAccount":"حساب جديد",
     "EmailAddress":"البريد الإلكتروني",
     "Password":"كلمة المرور",
-    "ForgotPassword?":"نسيت كلمة السر؟",
-    "Don'tHaveAnaccount?":"لا تمتلك حساب ؟",
+    "ForgotPassword":"نسيت كلمة السر؟",
+    "DontHaveAnaccount":"لا تمتلك حساب ؟",
     "GoogleSignIn": "تسجيل بواسطة جوجل",
     "AppleSignIn": "تسجيل بواسطة أبل",
     "FacebookSignIn": "تسجيل بواسطة فيسبوك",
@@ -28,6 +28,8 @@
     "EnterCodeSentToEmail": "أدخل الرمز الذي أرسلناه إلى عنوان بريد التاليMaxxx@email.com",
     "CheckCode": "تحقق من الرمز",
     "ResendCode": "إعادة إرسال الرمز",
-    "PasswordChangedSuccessfully": "تم تغيير الباسورد بنجاح"
+    "PasswordChangedSuccessfully": "تم تغيير الباسورد بنجاح",
+        "CreateAnAccount": "قم بإنشاء حساب"
+
 
 }

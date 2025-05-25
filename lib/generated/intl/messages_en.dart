@@ -31,8 +31,14 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "CheckCode": MessageLookupByLibrary.simpleMessage("Check Code"),
     "CreateAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
+    "CreateAnAccount": MessageLookupByLibrary.simpleMessage(
+      "Create an Account",
+    ),
     "CreateNewAccount": MessageLookupByLibrary.simpleMessage(
       "Create New Account",
+    ),
+    "DontHaveAnaccount": MessageLookupByLibrary.simpleMessage(
+      "Don\'t have an account?",
     ),
     "DontWorry": MessageLookupByLibrary.simpleMessage(
       "Don\'t worry, just enter your phone number and we will send a verification code.",
@@ -45,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "FacebookSignIn": MessageLookupByLibrary.simpleMessage(
       "Sign in with Facebook",
     ),
+    "ForgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "Fruit": MessageLookupByLibrary.simpleMessage("Fruit"),
     "FullName": MessageLookupByLibrary.simpleMessage("Full Name"),
     "GetStarted": MessageLookupByLibrary.simpleMessage("Get Started"),

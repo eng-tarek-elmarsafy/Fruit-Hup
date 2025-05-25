@@ -31,7 +31,11 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "CheckCode": MessageLookupByLibrary.simpleMessage("تحقق من الرمز"),
     "CreateAccount": MessageLookupByLibrary.simpleMessage("حساب جديد"),
+    "CreateAnAccount": MessageLookupByLibrary.simpleMessage("قم بإنشاء حساب"),
     "CreateNewAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
+    "DontHaveAnaccount": MessageLookupByLibrary.simpleMessage(
+      "لا تمتلك حساب ؟",
+    ),
     "DontWorry": MessageLookupByLibrary.simpleMessage(
       "لا تقلق ، ما عليك سوى كتابة رقم هاتفك وسنرسل رمز التحقق.",
     ),
@@ -43,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "FacebookSignIn": MessageLookupByLibrary.simpleMessage(
       "تسجيل بواسطة فيسبوك",
     ),
+    "ForgotPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة السر؟"),
     "Fruit": MessageLookupByLibrary.simpleMessage("Fruit"),
     "FullName": MessageLookupByLibrary.simpleMessage("الاسم كامل"),
     "GetStarted": MessageLookupByLibrary.simpleMessage("ابدأ الان"),

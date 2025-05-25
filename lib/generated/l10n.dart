@@ -134,9 +134,15 @@ class S {
     return Intl.message('Password', name: 'Password', desc: '', args: []);
   }
 
-  // skipped getter for the 'ForgotPassword?' key
-
-  // skipped getter for the 'Don\'tHaveAnaccount?' key
+  /// `Don't have an account?`
+  String get DontHaveAnaccount {
+    return Intl.message(
+      'Don\'t have an account?',
+      name: 'DontHaveAnaccount',
+      desc: '',
+      args: [],
+    );
+  }
 
   /// `Sign in with Google`
   String get GoogleSignIn {
@@ -263,6 +269,26 @@ class S {
     return Intl.message(
       'Password changed successfully',
       name: 'PasswordChangedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot Password?`
+  String get ForgotPassword {
+    return Intl.message(
+      'Forgot Password?',
+      name: 'ForgotPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create an Account`
+  String get CreateAnAccount {
+    return Intl.message(
+      'Create an Account',
+      name: 'CreateAnAccount',
       desc: '',
       args: [],
     );

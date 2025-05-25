@@ -86,12 +86,15 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
             ? Positioned(
               top: MediaQuery.sizeOf(context).height * .801,
 
-              child: CustomButton(
-                title: S.of(context).GetStarted,
-                onPressed: () {
-                  Prefs.setBool(kIsOnboardingSeen, true);
-                  Navigator.pushReplacementNamed(context, LoginView.id);
-                },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: CustomButton(
+                  title: S.of(context).GetStarted,
+                  onPressed: () {
+                    Prefs.setBool(kIsOnboardingSeen, true);
+                    Navigator.pushReplacementNamed(context, LoginView.id);
+                  },
+                ),
               ),
             )
             : const SizedBox.shrink(),

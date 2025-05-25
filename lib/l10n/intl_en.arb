@@ -11,8 +11,7 @@
     "CreateAccount":"Create Account",
     "EmailAddress":"Email Address",
     "Password":"Password",
-    "ForgotPassword?":"Forgot Password?",
-    "Don'tHaveAnaccount?":"Don't have an account?",
+    "DontHaveAnaccount":"Don't have an account?",
     "GoogleSignIn": "Sign in with Google",
     "AppleSignIn": "Sign in with Apple",
     "FacebookSignIn": "Sign in with Facebook",
@@ -28,5 +27,7 @@
     "EnterCodeSentToEmail": "Enter the code we sent to the following email address\nMaxxx@email.com",
     "CheckCode": "Check Code",
     "ResendCode": "Resend Code",
-    "PasswordChangedSuccessfully": "Password changed successfully"
+    "PasswordChangedSuccessfully": "Password changed successfully",
+    "ForgotPassword":"Forgot Password?",
+    "CreateAnAccount": "Create an Account"
 }

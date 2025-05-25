@@ -11,18 +11,15 @@ class CustomButton extends StatelessWidget {
     return SizedBox(
       width: MediaQuery.sizeOf(context).width,
       height: 54,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: AppColor.green1_500,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
-            ),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColor.green1_500,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
           ),
-          onPressed: onPressed,
-          child: Text(title, style: AppStyle.basaBold),
         ),
+        onPressed: onPressed,
+        child: Text(title, style: AppStyle.basaBold),
       ),
     );
   }
