@@ -22,10 +22,44 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "AlreadyHaveAnAccountOnly": MessageLookupByLibrary.simpleMessage(
+      "تمتلك حساب بالفعل؟",
+    ),
+    "AppleSignIn": MessageLookupByLibrary.simpleMessage("تسجيل بواسطة أبل"),
+    "ByCreatingAccountYouAgreeTo": MessageLookupByLibrary.simpleMessage(
+      "من خلال إنشاء حساب ، فإنك توافق على",
+    ),
+    "CheckCode": MessageLookupByLibrary.simpleMessage("تحقق من الرمز"),
+    "CreateAccount": MessageLookupByLibrary.simpleMessage("حساب جديد"),
+    "CreateNewAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
+    "DontWorry": MessageLookupByLibrary.simpleMessage(
+      "لا تقلق ، ما عليك سوى كتابة رقم هاتفك وسنرسل رمز التحقق.",
+    ),
+    "Email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "EmailAddress": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "EnterCodeSentToEmail": MessageLookupByLibrary.simpleMessage(
+      "أدخل الرمز الذي أرسلناه إلى عنوان بريد التاليMaxxx@email.com",
+    ),
+    "FacebookSignIn": MessageLookupByLibrary.simpleMessage(
+      "تسجيل بواسطة فيسبوك",
+    ),
     "Fruit": MessageLookupByLibrary.simpleMessage("Fruit"),
+    "FullName": MessageLookupByLibrary.simpleMessage("الاسم كامل"),
     "GetStarted": MessageLookupByLibrary.simpleMessage("ابدأ الان"),
+    "GoogleSignIn": MessageLookupByLibrary.simpleMessage("تسجيل بواسطة جوجل"),
     "HUB": MessageLookupByLibrary.simpleMessage("HUB"),
+    "Login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
+    "Or": MessageLookupByLibrary.simpleMessage("أو"),
+    "OurTermsAndConditions": MessageLookupByLibrary.simpleMessage(
+      "الشروط والأحكام الخاصة بنا",
+    ),
+    "Password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "PasswordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم تغيير الباسورد بنجاح",
+    ),
+    "ResendCode": MessageLookupByLibrary.simpleMessage("إعادة إرسال الرمز"),
     "Skip": MessageLookupByLibrary.simpleMessage("تخط"),
+    "VerifyCode": MessageLookupByLibrary.simpleMessage("التحقق من الرمز"),
     "hello": MessageLookupByLibrary.simpleMessage("مرحبًا بك في"),
     "onboardingSuptitil1": MessageLookupByLibrary.simpleMessage(
       "اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.",

@@ -183,11 +183,21 @@ class S {
     return Intl.message('Email', name: 'Email', desc: '', args: []);
   }
 
-  /// `By creating an account, you agree to our Terms and Conditions`
-  String get ByCreatingAnAccount {
+  /// `By creating an account, you agree to`
+  String get ByCreatingAccountYouAgreeTo {
     return Intl.message(
-      'By creating an account, you agree to our Terms and Conditions',
-      name: 'ByCreatingAnAccount',
+      'By creating an account, you agree to',
+      name: 'ByCreatingAccountYouAgreeTo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Our Terms and Conditions`
+  String get OurTermsAndConditions {
+    return Intl.message(
+      'Our Terms and Conditions',
+      name: 'OurTermsAndConditions',
       desc: '',
       args: [],
     );
@@ -198,16 +208,6 @@ class S {
     return Intl.message(
       'Create New Account',
       name: 'CreateNewAccount',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Already have an account? Login`
-  String get AlreadyHaveAnAccount {
-    return Intl.message(
-      'Already have an account? Login',
-      name: 'AlreadyHaveAnAccount',
       desc: '',
       args: [],
     );
