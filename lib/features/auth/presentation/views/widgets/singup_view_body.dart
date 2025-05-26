@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hup/core/utils/app_color.dart';
-import 'package:fruit_hup/core/utils/app_style.dart';
+import 'package:fruit_hup/core/widgets/custom_button.dart';
 import 'package:fruit_hup/core/widgets/custom_text_form_field.dart';
-import 'package:fruit_hup/features/auth/presentation/views/widgets/custom_chack_box.dart';
+import 'package:fruit_hup/features/auth/presentation/views/widgets/sign_up_promp_row.dart';
+import 'package:fruit_hup/features/auth/presentation/views/widgets/terms_and_conditions_agreement_row.dart';
 import 'package:fruit_hup/generated/l10n.dart';
 
 class SingUpViewBody extends StatelessWidget {
@@ -28,31 +28,19 @@ class SingUpViewBody extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            Row(
-              children: [
-                const CustomChackBox(),
-                const SizedBox(width: 16),
-                Expanded(
-                  child: Text.rich(
-                    TextSpan(
-                      children: [
-                        TextSpan(
-                          text: S.of(context).ByCreatingAccountYouAgreeTo,
-                          style: AppStyle.smallBold.copyWith(
-                            color: AppColor.gray400,
-                          ),
-                        ),
-                        TextSpan(
-                          text: S.of(context).OurTermsAndConditions,
-                          style: AppStyle.smallBold.copyWith(
-                            color: AppColor.green1_600,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
+            const TermsAndConditionsAgreementRow(),
+            const SizedBox(height: 30),
+            CustomButton(
+              title: S.of(context).CreateNewAccount,
+              onPressed: () {},
+            ),
+            const SizedBox(height: 30),
+            SignUpPromptRow(
+              text1: S.of(context).AlreadyHaveAnAccountOnly,
+              text2: S.of(context).Login,
+              goTo: () {
+                Navigator.pop(context);
+              },
             ),
           ],
         ),

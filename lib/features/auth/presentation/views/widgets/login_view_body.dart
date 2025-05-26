@@ -42,6 +42,9 @@ class LoginViewBody extends StatelessWidget {
             SignUpPromptRow(
               text1: S.of(context).DontHaveAnaccount,
               text2: S.of(context).CreateAnAccount,
+              goTo: () {
+                Navigator.pushNamed(context, SingUpView.id);
+              },
             ),
             const SizedBox(height: 33),
             const OrDividerRow(),
