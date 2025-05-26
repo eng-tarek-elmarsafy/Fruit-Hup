@@ -10,13 +10,16 @@ class ForgotPasswordTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        log(S.of(context).ForgotPassword);
-      },
-      child: Text(
-        S.of(context).ForgotPassword,
-        style: AppStyle.smallBold.copyWith(color: AppColor.green1_600),
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: GestureDetector(
+        onTap: () {
+          log(S.of(context).ForgotPassword);
+        },
+        child: Text(
+          S.of(context).ForgotPassword,
+          style: AppStyle.smallBold.copyWith(color: AppColor.green1_600),
+        ),
       ),
     );
   }

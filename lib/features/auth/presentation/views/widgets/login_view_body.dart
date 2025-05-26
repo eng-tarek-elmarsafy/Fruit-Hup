@@ -13,52 +13,54 @@ class LoginViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 24),
-          CustomTextFormField(
-            hintText: S.of(context).Email,
-            textInputType: TextInputType.emailAddress,
-          ),
-          const SizedBox(height: 16),
-          CustomTextFormField(
-            textInputType: TextInputType.visiblePassword,
-            hintText: S.of(context).Password,
-            suffixIcon: const Icon(
-              Icons.remove_red_eye,
-              color: Color(0xffC9CECF),
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 24),
+            CustomTextFormField(
+              hintText: S.of(context).Email,
+              textInputType: TextInputType.emailAddress,
             ),
-          ),
-          const SizedBox(height: 16),
-          const ForgotPasswordTextButton(),
-          const SizedBox(height: 33),
-          CustomButton(title: S.of(context).Login, onPressed: () {}),
-          const SizedBox(height: 33),
-          SignUpPromptRow(
-            text1: S.of(context).DontHaveAnaccount,
-            text2: S.of(context).CreateAnAccount,
-          ),
-          const SizedBox(height: 33),
-          const OrDividerRow(),
-          const SizedBox(height: 16),
-          SocialLoginButton(
-            title: S.of(context).GoogleSignIn,
-            logo: Assets.imageGooglLogo,
-          ),
-          const SizedBox(height: 16),
-          SocialLoginButton(
-            title: S.of(context).AppleSignIn,
-            logo: Assets.imageAppleLogo,
-          ),
-          const SizedBox(height: 16),
-          SocialLoginButton(
-            title: S.of(context).FacebookSignIn,
-            logo: Assets.imageFecbookLogo,
-          ),
-        ],
+            const SizedBox(height: 16),
+            CustomTextFormField(
+              textInputType: TextInputType.visiblePassword,
+              hintText: S.of(context).Password,
+              suffixIcon: const Icon(
+                Icons.remove_red_eye,
+                color: Color(0xffC9CECF),
+              ),
+            ),
+            const SizedBox(height: 16),
+            const ForgotPasswordTextButton(),
+            const SizedBox(height: 33),
+            CustomButton(title: S.of(context).Login, onPressed: () {}),
+            const SizedBox(height: 33),
+            SignUpPromptRow(
+              text1: S.of(context).DontHaveAnaccount,
+              text2: S.of(context).CreateAnAccount,
+            ),
+            const SizedBox(height: 33),
+            const OrDividerRow(),
+            const SizedBox(height: 16),
+            SocialLoginButton(
+              title: S.of(context).GoogleSignIn,
+              logo: Assets.imageGooglLogo,
+            ),
+            const SizedBox(height: 16),
+            SocialLoginButton(
+              title: S.of(context).AppleSignIn,
+              logo: Assets.imageAppleLogo,
+            ),
+            const SizedBox(height: 16),
+            SocialLoginButton(
+              title: S.of(context).FacebookSignIn,
+              logo: Assets.imageFecbookLogo,
+            ),
+          ],
+        ),
       ),
     );
   }
