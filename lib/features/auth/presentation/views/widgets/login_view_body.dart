@@ -3,6 +3,7 @@ import 'package:fruit_hup/core/utils/assets.dart';
 import 'package:fruit_hup/core/widgets/custom_button.dart';
 import 'package:fruit_hup/core/widgets/custom_text_form_field.dart';
 import 'package:fruit_hup/core/widgets/or_divider_row.dart';
+import 'package:fruit_hup/features/auth/presentation/views/singup_view.dart';
 import 'package:fruit_hup/features/auth/presentation/views/widgets/forgot_password_text_button.dart';
 import 'package:fruit_hup/features/auth/presentation/views/widgets/sign_up_promp_row.dart';
 import 'package:fruit_hup/features/auth/presentation/views/widgets/social_login_button.dart';
