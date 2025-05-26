@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "853447844228",
+    "project_id": "frit-hub",
+    "storage_bucket": "frit-hub.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:853447844228:android:feed00ac05ff9911bd7dd1",
+        "android_client_info": {
+          "package_name": "com.example.fruit_hup"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9ymocfJAyNsoHIkxsNvKg6VPn59tsZhM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

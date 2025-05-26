@@ -85,7 +85,8 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
         currentPage == 1
             ? Positioned(
               top: MediaQuery.sizeOf(context).height * .801,
-
+              left: 0,
+              right: 0,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: CustomButton(
