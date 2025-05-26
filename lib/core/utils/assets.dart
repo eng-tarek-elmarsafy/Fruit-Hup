@@ -61,5 +61,9 @@ class Assets {
   /// Assets for imageSplashBottom
   /// assets/image/splash_bottom.svg
   static const String imageSplashBottom = "assets/image/splash_bottom.svg";
+
+  /// Assets for imageSuccess
+  /// assets/image/success.svg
+  static const String imageSuccess = "assets/image/success.svg";
 }
 

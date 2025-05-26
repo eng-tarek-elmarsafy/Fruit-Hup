@@ -21,6 +21,7 @@ class TermsAndConditionsAgreementRow extends StatelessWidget {
                   text: S.of(context).ByCreatingAccountYouAgreeTo,
                   style: AppStyle.smallBold.copyWith(color: AppColor.gray400),
                 ),
+                const TextSpan(text: ' '),
                 TextSpan(
                   text: S.of(context).OurTermsAndConditions,
                   style: AppStyle.smallBold.copyWith(

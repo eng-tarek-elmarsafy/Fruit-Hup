@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hup/core/utils/app_color.dart';
 import 'package:fruit_hup/core/utils/app_style.dart';
-import 'package:fruit_hup/features/auth/presentation/views/singup_view.dart';
 
 class SignUpPromptRow extends StatelessWidget {
   const SignUpPromptRow({
@@ -18,6 +17,7 @@ class SignUpPromptRow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(text1, style: AppStyle.basaBold.copyWith(color: AppColor.gray400)),
+        const SizedBox(width: 8),
         GestureDetector(
           onTap: goTo,
           child: Text(
