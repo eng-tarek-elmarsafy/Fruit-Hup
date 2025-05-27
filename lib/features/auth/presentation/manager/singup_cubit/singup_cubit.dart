@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:fruit_hup/core/error/failure.dart';
 import 'package:fruit_hup/features/auth/domain/entities/user_entitie.dart';
 import 'package:fruit_hup/features/auth/domain/repos/auth_repo.dart';
 import 'package:meta/meta.dart';
