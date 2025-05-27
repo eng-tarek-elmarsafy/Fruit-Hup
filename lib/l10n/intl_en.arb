@@ -29,5 +29,13 @@
     "ResendCode": "Resend Code",
     "PasswordChangedSuccessfully": "Password changed successfully",
     "ForgotPassword":"Forgot Password?",
-    "CreateAnAccount": "Create an Account"
+    "CreateAnAccount": "Create an Account",
+    "errorEnterEmail": "Please enter your email",
+    "errorInvalidEmail": "Invalid email address",
+    "errorEnterPassword": "Please enter your password",
+    "errorShortPassword": "Password must be at least 8 characters",
+    "errorWeakPassword": "Password must contain uppercase, lowercase, number, and special character",
+    "errorEnterName": "Please enter your name",
+    "errorShortName": "Name must be at least 2 characters",
+    "errorInvalidName": "Name should not contain numbers or symbols"
 }

@@ -293,6 +293,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Please enter your email`
+  String get errorEnterEmail {
+    return Intl.message(
+      'Please enter your email',
+      name: 'errorEnterEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid email address`
+  String get errorInvalidEmail {
+    return Intl.message(
+      'Invalid email address',
+      name: 'errorInvalidEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your password`
+  String get errorEnterPassword {
+    return Intl.message(
+      'Please enter your password',
+      name: 'errorEnterPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must be at least 8 characters`
+  String get errorShortPassword {
+    return Intl.message(
+      'Password must be at least 8 characters',
+      name: 'errorShortPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must contain uppercase, lowercase, number, and special character`
+  String get errorWeakPassword {
+    return Intl.message(
+      'Password must contain uppercase, lowercase, number, and special character',
+      name: 'errorWeakPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your name`
+  String get errorEnterName {
+    return Intl.message(
+      'Please enter your name',
+      name: 'errorEnterName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name must be at least 2 characters`
+  String get errorShortName {
+    return Intl.message(
+      'Name must be at least 2 characters',
+      name: 'errorShortName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name should not contain numbers or symbols`
+  String get errorInvalidName {
+    return Intl.message(
+      'Name should not contain numbers or symbols',
+      name: 'errorInvalidName',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

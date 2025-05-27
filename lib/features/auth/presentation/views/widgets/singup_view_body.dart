@@ -40,7 +40,7 @@ class _SingUpViewBodyState extends State<SingUpViewBody> {
             children: [
               const SizedBox(height: 24),
               CustomTextFormField(
-                validator: validateName,
+                validator: (value) => validateName(value, context),
                 onSaved: (p0) {
                   name = p0!;
                 },
@@ -51,7 +51,7 @@ class _SingUpViewBodyState extends State<SingUpViewBody> {
                 onSaved: (p0) {
                   email = p0!;
                 },
-                validator: validateEmail,
+                validator: (value) => validateEmail(value, context),
                 textInputType: TextInputType.emailAddress,
                 hintText: S.of(context).Email,
               ),
@@ -61,7 +61,7 @@ class _SingUpViewBodyState extends State<SingUpViewBody> {
                   password = p0!;
                 },
                 obscureText: obscureText,
-                validator: validatePassword,
+                validator: (value) => validatePassword(value, context),
                 textInputType: TextInputType.visiblePassword,
                 hintText: S.of(context).Password,
                 suffixIcon: IconButton(

@@ -69,6 +69,30 @@ class MessageLookup extends MessageLookupByLibrary {
     "ResendCode": MessageLookupByLibrary.simpleMessage("Resend Code"),
     "Skip": MessageLookupByLibrary.simpleMessage("Skip"),
     "VerifyCode": MessageLookupByLibrary.simpleMessage("Verify Code"),
+    "errorEnterEmail": MessageLookupByLibrary.simpleMessage(
+      "Please enter your email",
+    ),
+    "errorEnterName": MessageLookupByLibrary.simpleMessage(
+      "Please enter your name",
+    ),
+    "errorEnterPassword": MessageLookupByLibrary.simpleMessage(
+      "Please enter your password",
+    ),
+    "errorInvalidEmail": MessageLookupByLibrary.simpleMessage(
+      "Invalid email address",
+    ),
+    "errorInvalidName": MessageLookupByLibrary.simpleMessage(
+      "Name should not contain numbers or symbols",
+    ),
+    "errorShortName": MessageLookupByLibrary.simpleMessage(
+      "Name must be at least 2 characters",
+    ),
+    "errorShortPassword": MessageLookupByLibrary.simpleMessage(
+      "Password must be at least 8 characters",
+    ),
+    "errorWeakPassword": MessageLookupByLibrary.simpleMessage(
+      "Password must contain uppercase, lowercase, number, and special character",
+    ),
     "hello": MessageLookupByLibrary.simpleMessage("Welcome To "),
     "onboardingSuptitil1": MessageLookupByLibrary.simpleMessage(
       "Discover a unique shopping experience with FruitHUB. Explore our wide selection of premium fresh fruits and enjoy the best deals and top quality.",

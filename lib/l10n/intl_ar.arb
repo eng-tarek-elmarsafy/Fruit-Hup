@@ -29,7 +29,14 @@
     "CheckCode": "تحقق من الرمز",
     "ResendCode": "إعادة إرسال الرمز",
     "PasswordChangedSuccessfully": "تم تغيير الباسورد بنجاح",
-    "CreateAnAccount": "قم بإنشاء حساب"
-
+    "CreateAnAccount": "قم بإنشاء حساب",
+    "errorEnterEmail": "من فضلك أدخل البريد الإلكتروني",
+    "errorInvalidEmail": "البريد الإلكتروني غير صالح",
+    "errorEnterPassword": "من فضلك أدخل كلمة المرور",
+    "errorShortPassword": "كلمة المرور يجب أن تكون 8 حروف على الأقل",
+    "errorWeakPassword": "يجب أن تحتوي كلمة المرور على حرف كبير، صغير، رقم، ورمز خاص",
+    "errorEnterName": "من فضلك ادخل الاسم",
+    "errorShortName": "الاسم لازم يكون على الأقل حرفين",
+    "errorInvalidName": "الاسم لا يجب أن يحتوي على أرقام أو رموز"
 
 }
