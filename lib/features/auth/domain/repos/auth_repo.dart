@@ -3,8 +3,9 @@ import 'package:fruit_hup/core/error/failure.dart';
 import 'package:fruit_hup/features/auth/domain/entities/user_entitie.dart';
 
 abstract class AuthRepo {
-  Future<Either<Failure, UserEntitie>> createUserWithEmailAndPassword(
+  Future<Either<Failure, UserEntity>> createUserWithEmailAndPassword(
     String email,
     String password,
+    String name
   );
 }

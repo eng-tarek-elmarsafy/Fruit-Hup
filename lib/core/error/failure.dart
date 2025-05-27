@@ -3,3 +3,7 @@ class Failure {
 
   final String message;
 }
+
+class ServerFailure extends Failure {
+  ServerFailure({required super.message});
+}
