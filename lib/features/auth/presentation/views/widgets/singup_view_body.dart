@@ -18,9 +18,13 @@ class SingUpViewBody extends StatelessWidget {
             const SizedBox(height: 24),
             CustomTextFormField(hintText: S.of(context).FullName),
             const SizedBox(height: 16),
-            CustomTextFormField(hintText: S.of(context).Email),
+            CustomTextFormField(
+              textInputType: TextInputType.emailAddress,
+              hintText: S.of(context).Email,
+            ),
             const SizedBox(height: 16),
             CustomTextFormField(
+              textInputType: TextInputType.visiblePassword,
               hintText: S.of(context).Password,
               suffixIcon: const Icon(
                 Icons.remove_red_eye,
