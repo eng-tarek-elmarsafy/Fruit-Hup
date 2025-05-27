@@ -4,7 +4,8 @@ import 'package:fruit_hup/core/utils/app_color.dart';
 import 'package:fruit_hup/core/utils/assets.dart';
 
 class CustomChackBox extends StatefulWidget {
-  const CustomChackBox({super.key});
+  const CustomChackBox({super.key, required this.onChacked});
+  final void Function(bool value) onChacked;
 
   @override
   State<CustomChackBox> createState() => _CustomChackBoxState();
@@ -18,6 +19,7 @@ class _CustomChackBoxState extends State<CustomChackBox> {
       onTap: () {
         setState(() {
           isChacked = !isChacked;
+          widget.onChacked(isChacked);
         });
       },
       child: AnimatedContainer(

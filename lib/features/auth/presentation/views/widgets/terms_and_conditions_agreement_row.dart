@@ -5,13 +5,13 @@ import 'package:fruit_hup/features/auth/presentation/views/widgets/custom_chack_
 import 'package:fruit_hup/generated/l10n.dart';
 
 class TermsAndConditionsAgreementRow extends StatelessWidget {
-  const TermsAndConditionsAgreementRow({super.key});
-
+  const TermsAndConditionsAgreementRow({super.key, required this.onChacked});
+  final void Function(bool) onChacked;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const CustomChackBox(),
+        CustomChackBox(onChacked: onChacked),
         const SizedBox(width: 16),
         Expanded(
           child: Text.rich(
