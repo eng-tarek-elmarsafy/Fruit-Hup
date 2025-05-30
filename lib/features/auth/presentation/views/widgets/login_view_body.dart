@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_hup/core/utils/assets.dart';
 import 'package:fruit_hup/core/widgets/custom_button.dart';
 import 'package:fruit_hup/core/widgets/custom_text_form_field.dart';
 import 'package:fruit_hup/core/widgets/or_divider_row.dart';
@@ -8,7 +7,7 @@ import 'package:fruit_hup/features/auth/presentation/manager/login_cubit/login_c
 import 'package:fruit_hup/features/auth/presentation/views/singup_view.dart';
 import 'package:fruit_hup/features/auth/presentation/views/widgets/forgot_password_text_button.dart';
 import 'package:fruit_hup/features/auth/presentation/views/widgets/sign_up_promp_row.dart';
-import 'package:fruit_hup/features/auth/presentation/views/widgets/social_login_button.dart';
+import 'package:fruit_hup/features/auth/presentation/views/widgets/social_login.dart';
 import 'package:fruit_hup/generated/l10n.dart';
 
 class LoginViewBody extends StatefulWidget {
@@ -118,20 +117,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               const SizedBox(height: 33),
               const OrDividerRow(),
               const SizedBox(height: 16),
-              SocialLoginButton(
-                title: S.of(context).GoogleSignIn,
-                logo: Assets.imageGooglLogo,
-              ),
-              const SizedBox(height: 16),
-              SocialLoginButton(
-                title: S.of(context).AppleSignIn,
-                logo: Assets.imageAppleLogo,
-              ),
-              const SizedBox(height: 16),
-              SocialLoginButton(
-                title: S.of(context).FacebookSignIn,
-                logo: Assets.imageFecbookLogo,
-              ),
+              const SocialLogin(),
             ],
           ),
         ),
