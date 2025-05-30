@@ -37,5 +37,6 @@
     "errorWeakPassword": "Password must contain uppercase, lowercase, number, and special character",
     "errorEnterName": "Please enter your name",
     "errorShortName": "Name must be at least 2 characters",
-    "errorInvalidName": "Name should not contain numbers or symbols"
+    "errorInvalidName": "Name should not contain numbers or symbols",
+    "SomethingWentWrong": "Something went wrong, please try again"
 }

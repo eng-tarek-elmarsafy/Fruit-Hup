@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fruit_hup/core/error/custom_exception.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class FirebaseAuthService {
   Future<User> createUserWithEmailAndPassword(
@@ -48,5 +49,20 @@ class FirebaseAuthService {
     } catch (e) {
       throw CustomException(message: 'An error occurred. Please try again.');
     }
+  }
+
+  Future<User> signInWithGoogle() async {
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+    final GoogleSignInAuthentication? googleAuth =
+        await googleUser?.authentication;
+
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+
+    var resuilt = await FirebaseAuth.instance.signInWithCredential(credential);
+    return resuilt.user!;
   }
 }

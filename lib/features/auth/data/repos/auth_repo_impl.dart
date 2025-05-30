@@ -4,8 +4,10 @@ import 'package:dartz/dartz.dart';
 import 'package:fruit_hup/core/error/custom_exception.dart';
 import 'package:fruit_hup/core/error/failure.dart';
 import 'package:fruit_hup/core/services/firebase_auth_service.dart';
+import 'package:fruit_hup/features/auth/data/models/user_model.dart';
 import 'package:fruit_hup/features/auth/domain/entities/user_entitie.dart';
 import 'package:fruit_hup/features/auth/domain/repos/auth_repo.dart';
+import 'package:fruit_hup/generated/l10n.dart';
 
 class AuthRepoImpl implements AuthRepo {
   AuthRepoImpl({required this.firebaseAuthService});
@@ -62,6 +64,22 @@ class AuthRepoImpl implements AuthRepo {
       return left(ServerFailure(message: e.message));
     } catch (e) {
       log('AuthRepoImpl.signInWithEmailAndPassword Exception is $e');
+      return left(
+        ServerFailure(message: 'حدث خطأ ما. الرجاء المحاولة مرة اخرى.'),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithGoogle() async {
+    try {
+      var user = await firebaseAuthService.signInWithGoogle();
+
+      UserEntity userEntity = UserModel.fromFirebaseUser(user);
+
+      return right(userEntity);
+    } on Exception catch (e) {
+      log('AuthRepoImpl.signInWithGoogle Exception is $e');
       return left(
         ServerFailure(message: 'حدث خطأ ما. الرجاء المحاولة مرة اخرى.'),
       );

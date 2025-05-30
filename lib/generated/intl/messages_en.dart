@@ -68,6 +68,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "ResendCode": MessageLookupByLibrary.simpleMessage("Resend Code"),
     "Skip": MessageLookupByLibrary.simpleMessage("Skip"),
+    "SomethingWentWrong": MessageLookupByLibrary.simpleMessage(
+      "Something went wrong, please try again",
+    ),
     "VerifyCode": MessageLookupByLibrary.simpleMessage("Verify Code"),
     "errorEnterEmail": MessageLookupByLibrary.simpleMessage(
       "Please enter your email",

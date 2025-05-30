@@ -4,15 +4,16 @@ import 'package:fruit_hup/core/utils/app_color.dart';
 import 'package:fruit_hup/core/utils/app_style.dart';
 
 class SocialLoginButton extends StatelessWidget {
-  const SocialLoginButton({super.key, required this.title, required this.logo});
+  const SocialLoginButton({super.key, required this.title, required this.logo, required this.onPressed});
   final String title, logo;
+  final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
       height: 56,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: const Color(0xffffffff),
           shape: RoundedRectangleBorder(
