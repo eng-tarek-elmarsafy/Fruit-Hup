@@ -23,7 +23,9 @@ class SocialLogin extends StatelessWidget {
         SocialLoginButton(
           title: S.of(context).AppleSignIn,
           logo: Assets.imageAppleLogo,
-          onPressed: () {},
+          onPressed: () {
+            context.read<LoginCubit>().signInWithApple();
+          },
         ),
         const SizedBox(height: 16),
         SocialLoginButton(

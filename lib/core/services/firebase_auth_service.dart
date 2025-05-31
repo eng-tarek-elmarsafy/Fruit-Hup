@@ -1,9 +1,15 @@
-import 'dart:developer';
+import 'dart:developer' as developer;
+import 'dart:math';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:fruit_hup/core/error/custom_exception.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'dart:convert';
+// import 'dart:math';
+
+import 'package:crypto/crypto.dart';
+import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 class FirebaseAuthService {
   Future<User> createUserWithEmailAndPassword(
@@ -75,10 +81,10 @@ class FirebaseAuthService {
 
       return userCredential.user;
     } on FirebaseAuthException catch (e) {
-      log('FirebaseAuthException: ${e.code} - ${e.message}');
+      developer.log('FirebaseAuthException: ${e.code} - ${e.message}');
       throw CustomException(message: e.code);
     } catch (e) {
-      log('Unknown error during Google Sign-In: $e');
+      developer.log('Unknown error during Google Sign-In: $e');
       rethrow;
     }
   }
@@ -97,5 +103,45 @@ class FirebaseAuthService {
       throw CustomException(message: 'Failed to sign in with Facebook.');
     }
     return user;
+  }
+
+  String generateNonce([int length = 32]) {
+    const charset =
+        '0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._';
+    final random = Random.secure();
+    return List.generate(
+      length,
+      (_) => charset[random.nextInt(charset.length)],
+    ).join();
+  }
+
+  /// Returns the sha256 hash of [input] in hex notation.
+  String sha256ofString(String input) {
+    final bytes = utf8.encode(input);
+    final digest = sha256.convert(bytes);
+    return digest.toString();
+  }
+
+  Future<User> signInWithApple() async {
+    final rawNonce = generateNonce();
+    final nonce = sha256ofString(rawNonce);
+
+    final appleCredential = await SignInWithApple.getAppleIDCredential(
+      scopes: [
+        AppleIDAuthorizationScopes.email,
+        AppleIDAuthorizationScopes.fullName,
+      ],
+      nonce: nonce,
+    );
+
+    final oauthCredential = OAuthProvider(
+      "apple.com",
+    ).credential(idToken: appleCredential.identityToken, rawNonce: rawNonce);
+
+    final userCredential = await FirebaseAuth.instance.signInWithCredential(oauthCredential);
+    if (userCredential.user == null) {
+      throw CustomException(message: 'Failed to sign in with Apple.');
+    }
+    return userCredential.user!;
   }
 }

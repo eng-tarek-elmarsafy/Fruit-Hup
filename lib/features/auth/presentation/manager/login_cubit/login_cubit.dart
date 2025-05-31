@@ -38,4 +38,14 @@ class LoginCubit extends Cubit<LoginState> {
       (user) => emit(LoginSuccess(userEntity: user)),
     );
   }
+
+  signInWithApple() async {
+    emit(LoginLoading());
+    var resuilt = await authRepo.signInWithApple();
+
+    resuilt.fold(
+      (failuer) => emit(LoginFailure(message: failuer.message)),
+      (user) => emit(LoginSuccess(userEntity: user)),
+    );
+  }
 }

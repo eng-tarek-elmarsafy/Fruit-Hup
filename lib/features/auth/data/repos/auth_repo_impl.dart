@@ -112,4 +112,21 @@ class AuthRepoImpl implements AuthRepo {
       );
     }
   }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithApple() async {
+    try {
+      var resuilt = await firebaseAuthService.signInWithApple();
+      var userEntity = UserModel.fromFirebaseUser(resuilt);
+      return right(userEntity);
+    } on CustomException catch (e) {
+      return left(ServerFailure(message: e.toString()));
+    } catch (e, stackTrace) {
+      log('====================== $e');
+      log('================= $stackTrace');
+      return left(
+        ServerFailure(message: 'حدث خطأ غير متوقع. الرجاء المحاولة لاحقًا.'),
+      );
+    }
+  }
 }
