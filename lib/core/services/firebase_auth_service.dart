@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:fruit_hup/core/error/custom_exception.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -52,36 +55,47 @@ class FirebaseAuthService {
   }
 
   Future<User?> signInWithGoogle() async {
-  try {
-    // 1. بدء عملية تسجيل الدخول
-    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+    try {
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
-    // لو المستخدم لغى تسجيل الدخول
-    if (googleUser == null) {
-      return null; // المستخدم لغى العملية
+      if (googleUser == null) {
+        return null;
+      }
+
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser.authentication;
+
+      final AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+
+      final UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithCredential(credential);
+
+      return userCredential.user;
+    } on FirebaseAuthException catch (e) {
+      log('FirebaseAuthException: ${e.code} - ${e.message}');
+      throw CustomException(message: e.code);
+    } catch (e) {
+      log('Unknown error during Google Sign-In: $e');
+      rethrow;
     }
-
-    // 2. الحصول على التوكينات
-    final GoogleSignInAuthentication googleAuth =
-        await googleUser.authentication;
-
-    // 3. إنشاء الـ credential
-    final AuthCredential credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth.accessToken,
-      idToken: googleAuth.idToken,
-    );
-
-    // 4. تسجيل الدخول في Firebase
-    final UserCredential userCredential =
-        await FirebaseAuth.instance.signInWithCredential(credential);
-
-    return userCredential.user;
-  } on FirebaseAuthException catch (e) {
-    print('FirebaseAuthException: ${e.code} - ${e.message}');
-    rethrow; // أو تقدر ترمي CustomException
-  } catch (e) {
-    print('Unknown error during Google Sign-In: $e');
-    rethrow;
   }
-}
+
+  Future<User> signInWithFacebook() async {
+    final LoginResult loginResult = await FacebookAuth.instance.login();
+
+    final OAuthCredential facebookAuthCredential =
+        FacebookAuthProvider.credential(loginResult.accessToken!.tokenString);
+
+    final userCredential = await FirebaseAuth.instance.signInWithCredential(
+      facebookAuthCredential,
+    );
+    final user = userCredential.user;
+    if (user == null) {
+      throw CustomException(message: 'Failed to sign in with Facebook.');
+    }
+    return user;
+  }
 }

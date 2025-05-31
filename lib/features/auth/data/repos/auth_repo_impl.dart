@@ -95,4 +95,21 @@ class AuthRepoImpl implements AuthRepo {
       );
     }
   }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithFacebook() async {
+    try {
+      var resuilt = await firebaseAuthService.signInWithFacebook();
+      var userEntity = UserModel.fromFirebaseUser(resuilt);
+      return right(userEntity);
+    } on CustomException catch (e) {
+      return left(ServerFailure(message: e.toString()));
+    } catch (e, stackTrace) {
+      log('Unexpected error in signInWithFacebook: $e');
+      log('Stack trace: $stackTrace');
+      return left(
+        ServerFailure(message: 'حدث خطأ غير متوقع. الرجاء المحاولة لاحقًا.'),
+      );
+    }
+  }
 }
