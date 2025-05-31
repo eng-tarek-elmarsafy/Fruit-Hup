@@ -105,8 +105,8 @@ class AuthRepoImpl implements AuthRepo {
     } on CustomException catch (e) {
       return left(ServerFailure(message: e.toString()));
     } catch (e, stackTrace) {
-      log('Unexpected error in signInWithFacebook: $e');
-      log('Stack trace: $stackTrace');
+      log('====================== $e');
+      log('================= $stackTrace');
       return left(
         ServerFailure(message: 'حدث خطأ غير متوقع. الرجاء المحاولة لاحقًا.'),
       );
