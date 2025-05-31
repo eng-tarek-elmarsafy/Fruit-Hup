@@ -29,7 +29,9 @@ class SocialLogin extends StatelessWidget {
         SocialLoginButton(
           title: S.of(context).FacebookSignIn,
           logo: Assets.imageFecbookLogo,
-          onPressed: () {},
+          onPressed: () {
+            context.read<LoginCubit>().signInWithFacebook();
+          },
         ),
       ],
     );
