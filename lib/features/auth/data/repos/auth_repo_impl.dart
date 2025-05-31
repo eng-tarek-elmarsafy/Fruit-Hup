@@ -7,7 +7,6 @@ import 'package:fruit_hup/core/services/firebase_auth_service.dart';
 import 'package:fruit_hup/features/auth/data/models/user_model.dart';
 import 'package:fruit_hup/features/auth/domain/entities/user_entitie.dart';
 import 'package:fruit_hup/features/auth/domain/repos/auth_repo.dart';
-import 'package:fruit_hup/generated/l10n.dart';
 
 class AuthRepoImpl implements AuthRepo {
   AuthRepoImpl({required this.firebaseAuthService});
@@ -73,15 +72,26 @@ class AuthRepoImpl implements AuthRepo {
   @override
   Future<Either<Failure, UserEntity>> signInWithGoogle() async {
     try {
-      var user = await firebaseAuthService.signInWithGoogle();
+      final user = await firebaseAuthService.signInWithGoogle();
 
-      UserEntity userEntity = UserModel.fromFirebaseUser(user);
+      if (user == null) {
+        return left(
+          ServerFailure(
+            message: 'تم إلغاء عملية تسجيل الدخول من قبل المستخدم.',
+          ),
+        );
+      }
 
+      final userEntity = UserModel.fromFirebaseUser(user);
       return right(userEntity);
-    } on Exception catch (e) {
-      log('AuthRepoImpl.signInWithGoogle Exception is $e');
+    } on CustomException catch (e) {
+      log('FirebaseAuthException in signInWithGoogle: - ${e.message}');
+      return left(ServerFailure(message: 'فشل في تسجيل الدخول: ${e.message}'));
+    } catch (e, stackTrace) {
+      log('Unexpected error in signInWithGoogle: $e');
+      log('Stack trace: $stackTrace');
       return left(
-        ServerFailure(message: 'حدث خطأ ما. الرجاء المحاولة مرة اخرى.'),
+        ServerFailure(message: 'حدث خطأ غير متوقع. الرجاء المحاولة لاحقًا.'),
       );
     }
   }
