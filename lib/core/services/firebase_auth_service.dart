@@ -12,6 +12,10 @@ import 'package:crypto/crypto.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 class FirebaseAuthService {
+  Future<void> deleteUser() async {
+    await FirebaseAuth.instance.currentUser!.delete();
+  }
+
   Future<User> createUserWithEmailAndPassword(
     String email,
     String password,
@@ -138,7 +142,9 @@ class FirebaseAuthService {
       "apple.com",
     ).credential(idToken: appleCredential.identityToken, rawNonce: rawNonce);
 
-    final userCredential = await FirebaseAuth.instance.signInWithCredential(oauthCredential);
+    final userCredential = await FirebaseAuth.instance.signInWithCredential(
+      oauthCredential,
+    );
     if (userCredential.user == null) {
       throw CustomException(message: 'Failed to sign in with Apple.');
     }
