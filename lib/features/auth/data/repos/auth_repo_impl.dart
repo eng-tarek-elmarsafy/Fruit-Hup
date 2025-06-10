@@ -18,6 +18,7 @@ class AuthRepoImpl implements AuthRepo {
   });
   final FirebaseFirestoreService firebaseFirestoreService;
   final FirebaseAuthService firebaseAuthService;
+  //MARK:create account
   @override
   Future<Either<Failure, UserEntity>> createUserWithEmailAndPassword(
     String email,
@@ -51,6 +52,7 @@ class AuthRepoImpl implements AuthRepo {
     }
   }
 
+  //MARK:sign email and pass
   @override
   Future<Either<Failure, UserEntity>> signInWithEmailAndPassword(
     String email,
@@ -61,7 +63,9 @@ class AuthRepoImpl implements AuthRepo {
         email,
         password,
       );
-      return right(UserModel.fromFirebaseUser(user));
+
+      var userData = await getUserData(user.uid);
+      return right(userData);
     } on CustomException catch (e) {
       log('AuthRepoImpl.signInWithEmailAndPassword Exception is $e');
       return left(ServerFailure(message: e.message));
@@ -73,6 +77,7 @@ class AuthRepoImpl implements AuthRepo {
     }
   }
 
+  //MARK:Googl
   @override
   Future<Either<Failure, UserEntity>> signInWithGoogle() async {
     User? user;
@@ -104,6 +109,7 @@ class AuthRepoImpl implements AuthRepo {
     }
   }
 
+  //MARK:Facebook
   @override
   Future<Either<Failure, UserEntity>> signInWithFacebook() async {
     User? user;
@@ -125,6 +131,7 @@ class AuthRepoImpl implements AuthRepo {
     }
   }
 
+  //MARK:Apple
   @override
   Future<Either<Failure, UserEntity>> signInWithApple() async {
     User? user;
@@ -146,11 +153,29 @@ class AuthRepoImpl implements AuthRepo {
     }
   }
 
+  //MARK:Get user
   @override
-  Future addUser(UserEntity user) async {
-    firebaseFirestoreService.add(BackendEndpoints.addUserData, user.toMap());
+  Future<UserEntity> getUserData(String uId) async {
+    var data = await firebaseFirestoreService.getData(
+      BackendEndpoints.getUserData,
+      uId,
+    );
+
+    UserEntity userEntity = UserModel.fromJson(data);
+    return userEntity;
   }
 
+  //MARK:Add user
+  @override
+  Future addUser(UserEntity user) async {
+    firebaseFirestoreService.addData(
+      BackendEndpoints.addUserData,
+      user.uId,
+      user.toMap(),
+    );
+  }
+
+  //MARK:Delete user
   void deleteUser(User? user) {
     if (user != null) {
       firebaseAuthService.deleteUser();

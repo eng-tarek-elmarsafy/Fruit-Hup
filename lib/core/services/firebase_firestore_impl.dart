@@ -3,9 +3,24 @@ import 'package:fruit_hup/core/services/firebase_firestore_service.dart';
 
 class FirebaseFirestoreServiceImpl implements FirebaseFirestoreService {
   @override
-  Future<void> add(String path, Map<String, dynamic> data) async {
+  Future<void> addData(
+    String path,
+    String? uId,
+    Map<String, dynamic> data,
+  ) async {
     final FirebaseFirestore firestore = FirebaseFirestore.instance;
+    if (uId != null) {
+      await firestore.collection(path).doc(uId).set(data);
+    } else {
+      await firestore.collection(path).add(data);
+    }
+  }
 
-    await firestore.collection(path).add(data);
+  @override
+  Future<Map<String, dynamic>> getData(String path, String uId) async {
+    final FirebaseFirestore firestore = FirebaseFirestore.instance;
+    var data = await firestore.collection(path).doc(uId).get();
+
+    return data.data() as Map<String, dynamic>;
   }
 }

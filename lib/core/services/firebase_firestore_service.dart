@@ -1,3 +1,4 @@
 abstract class FirebaseFirestoreService {
-  Future<void> add(String path, Map<String, dynamic> data);
+  Future<void> addData(String path, String? uId, Map<String, dynamic> data);
+  Future<Map<String, dynamic>> getData(String path, String uId);
 }

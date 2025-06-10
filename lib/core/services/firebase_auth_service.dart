@@ -15,7 +15,7 @@ class FirebaseAuthService {
   Future<void> deleteUser() async {
     await FirebaseAuth.instance.currentUser!.delete();
   }
-
+//MARK:create account
   Future<User> createUserWithEmailAndPassword(
     String email,
     String password,
@@ -42,6 +42,7 @@ class FirebaseAuthService {
     }
   }
 
+  //MARK:EmailAndPassword
   Future<User> signInWithEmailAndPassword(String email, String password) async {
     try {
       final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -64,6 +65,7 @@ class FirebaseAuthService {
     }
   }
 
+  //MARK:Google
   Future<User?> signInWithGoogle() async {
     try {
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
@@ -93,6 +95,7 @@ class FirebaseAuthService {
     }
   }
 
+  //MARK:Facebook
   Future<User> signInWithFacebook() async {
     final LoginResult loginResult = await FacebookAuth.instance.login();
 
@@ -126,6 +129,7 @@ class FirebaseAuthService {
     return digest.toString();
   }
 
+  //MARK:Apple
   Future<User> signInWithApple() async {
     final rawNonce = generateNonce();
     final nonce = sha256ofString(rawNonce);
