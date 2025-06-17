@@ -38,6 +38,7 @@
     "errorEnterName": "من فضلك ادخل الاسم",
     "errorShortName": "الاسم لازم يكون على الأقل حرفين",
     "errorInvalidName": "الاسم لا يجب أن يحتوي على أرقام أو رموز",
-    "SomethingWentWrongAr": "لقد حدث خطأ ما، الرجاء إعادة المحاولة"
-
+    "SomethingWentWrongAr": "لقد حدث خطأ ما، الرجاء إعادة المحاولة",
+    "GoodMorning": "صباح الخير !..",
+    "SearchFor": "ابحث عن......."
 }

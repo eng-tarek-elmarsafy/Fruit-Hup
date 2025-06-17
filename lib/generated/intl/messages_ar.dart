@@ -51,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Fruit": MessageLookupByLibrary.simpleMessage("Fruit"),
     "FullName": MessageLookupByLibrary.simpleMessage("الاسم كامل"),
     "GetStarted": MessageLookupByLibrary.simpleMessage("ابدأ الان"),
+    "GoodMorning": MessageLookupByLibrary.simpleMessage("صباح الخير !.."),
     "GoogleSignIn": MessageLookupByLibrary.simpleMessage("تسجيل بواسطة جوجل"),
     "HUB": MessageLookupByLibrary.simpleMessage("HUB"),
     "Login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
@@ -63,6 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم تغيير الباسورد بنجاح",
     ),
     "ResendCode": MessageLookupByLibrary.simpleMessage("إعادة إرسال الرمز"),
+    "SearchFor": MessageLookupByLibrary.simpleMessage("ابحث عن......."),
     "Skip": MessageLookupByLibrary.simpleMessage("تخط"),
     "VerifyCode": MessageLookupByLibrary.simpleMessage("التحقق من الرمز"),
     "errorEnterEmail": MessageLookupByLibrary.simpleMessage(

@@ -55,6 +55,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Fruit": MessageLookupByLibrary.simpleMessage("Fruit"),
     "FullName": MessageLookupByLibrary.simpleMessage("Full Name"),
     "GetStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
+    "GoodMorning": MessageLookupByLibrary.simpleMessage("Good Morning!.."),
     "GoogleSignIn": MessageLookupByLibrary.simpleMessage("Sign in with Google"),
     "HUB": MessageLookupByLibrary.simpleMessage("HUB"),
     "Login": MessageLookupByLibrary.simpleMessage("Login"),
@@ -67,6 +68,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Password changed successfully",
     ),
     "ResendCode": MessageLookupByLibrary.simpleMessage("Resend Code"),
+    "SearchFor": MessageLookupByLibrary.simpleMessage("Search for......."),
     "Skip": MessageLookupByLibrary.simpleMessage("Skip"),
     "SomethingWentWrong": MessageLookupByLibrary.simpleMessage(
       "Something went wrong, please try again",

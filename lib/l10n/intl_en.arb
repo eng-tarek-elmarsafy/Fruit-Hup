@@ -38,5 +38,7 @@
     "errorEnterName": "Please enter your name",
     "errorShortName": "Name must be at least 2 characters",
     "errorInvalidName": "Name should not contain numbers or symbols",
-    "SomethingWentWrong": "Something went wrong, please try again"
+    "SomethingWentWrong": "Something went wrong, please try again",
+    "GoodMorning": "Good Morning!..",
+    "SearchFor": "Search for......."
 }
