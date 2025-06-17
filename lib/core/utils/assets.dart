@@ -42,6 +42,10 @@ class Assets {
   /// assets/image/notif.svg
   static const String imageNotif = "assets/image/notif.svg";
 
+  /// Assets for imageNotification
+  /// assets/image/notification.svg
+  static const String imageNotification = "assets/image/notification.svg";
+
   /// Assets for imageOnboarding1
   /// assets/image/onboarding1.svg
   static const String imageOnboarding1 = "assets/image/onboarding1.svg";
@@ -65,6 +69,10 @@ class Assets {
   /// Assets for imageProfel
   /// assets/image/profel.svg
   static const String imageProfel = "assets/image/profel.svg";
+
+  /// Assets for imageProfile
+  /// assets/image/profile.png
+  static const String imageProfile = "assets/image/profile.png";
 
   /// Assets for imageSearchIcon
   /// assets/image/search_icon.svg
