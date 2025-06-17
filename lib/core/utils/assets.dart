@@ -58,6 +58,10 @@ class Assets {
   /// assets/image/plan.svg
   static const String imagePlan = "assets/image/plan.svg";
 
+  /// Assets for imageProfel
+  /// assets/image/profel.svg
+  static const String imageProfel = "assets/image/profel.svg";
+
   /// Assets for imageSplashBottom
   /// assets/image/splash_bottom.svg
   static const String imageSplashBottom = "assets/image/splash_bottom.svg";

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_hup/core/widgets/error_widget_view.dart';
 import 'package:fruit_hup/features/auth/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:fruit_hup/features/auth/presentation/views/widgets/login_view_body.dart';
-import 'package:fruit_hup/features/auth/presentation/views/widgets/singup_view_body_bloc_consumer.dart';
+import 'package:fruit_hup/features/home/presentation/views/home_view.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class LoginViewBodyBlocConsumer extends StatelessWidget {
@@ -22,6 +23,8 @@ class LoginViewBodyBlocConsumer extends StatelessWidget {
               ),
             ),
           );
+        } else if (state is LoginSuccess) {
+          Navigator.pushNamed(context, HomeView.id);
         }
       },
       builder: (context, state) {
