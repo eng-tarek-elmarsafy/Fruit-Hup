@@ -22,6 +22,14 @@ class Assets {
   /// assets/image/eye_icon.svg
   static const String imageEyeIcon = "assets/image/eye_icon.svg";
 
+  /// Assets for imageFeatuerImageTest
+  /// assets/image/featuer_image_test.png
+  static const String imageFeatuerImageTest = "assets/image/featuer_image_test.png";
+
+  /// Assets for imageFeatuerSvg
+  /// assets/image/featuer_svg.svg
+  static const String imageFeatuerSvg = "assets/image/featuer_svg.svg";
+
   /// Assets for imageFecbookLogo
   /// assets/image/fecbook_logo.svg
   static const String imageFecbookLogo = "assets/image/fecbook_logo.svg";

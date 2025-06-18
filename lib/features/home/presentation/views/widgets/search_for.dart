@@ -12,22 +12,34 @@ class SearchFor extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: SearchBar(
-        elevation: WidgetStateProperty.all<double>(0),
-        backgroundColor: const WidgetStatePropertyAll<Color>(Colors.white),
-        shape: WidgetStateProperty.all<OutlinedBorder>(
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      child: Container(
+        decoration: const BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Color(0x0A000000),
+              blurRadius: 9,
+              offset: Offset(0, 2),
+              spreadRadius: 0,
+            ),
+          ],
         ),
-        hintText: S.of(context).SearchFor,
-        hintStyle: WidgetStateProperty.all<TextStyle?>(AppStyle.smallRegular),
-        leading: Padding(
-          padding: EdgeInsets.only(
-            left: isArabic() ? 16 : 0,
-            right: isArabic() ? 0 : 16,
+        child: SearchBar(
+          elevation: WidgetStateProperty.all<double>(0),
+          backgroundColor: const WidgetStatePropertyAll<Color>(Colors.white),
+          shape: WidgetStateProperty.all<OutlinedBorder>(
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           ),
-          child: SvgPicture.asset(Assets.imageSearchIcon),
+          hintText: S.of(context).SearchFor,
+          hintStyle: WidgetStateProperty.all<TextStyle?>(AppStyle.smallRegular),
+          leading: Padding(
+            padding: EdgeInsets.only(
+              left: isArabic() ? 16 : 0,
+              right: isArabic() ? 0 : 16,
+            ),
+            child: SvgPicture.asset(Assets.imageSearchIcon),
+          ),
+          trailing: [SvgPicture.asset(Assets.imageSettingIcon)],
         ),
-        trailing: [SvgPicture.asset(Assets.imageSettingIcon)],
       ),
     );
   }
