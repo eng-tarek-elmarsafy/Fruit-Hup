@@ -42,6 +42,38 @@ class Assets {
   /// assets/image/googl_logo.svg
   static const String imageGooglLogo = "assets/image/googl_logo.svg";
 
+  /// Assets for imageIconsBoldHome
+  /// assets/image/icons/bold/home.svg
+  static const String imageIconsBoldHome = "assets/image/icons/bold/home.svg";
+
+  /// Assets for imageIconsBoldProdacte
+  /// assets/image/icons/bold/prodacte.svg
+  static const String imageIconsBoldProdacte = "assets/image/icons/bold/prodacte.svg";
+
+  /// Assets for imageIconsBoldShopping
+  /// assets/image/icons/bold/shopping.svg
+  static const String imageIconsBoldShopping = "assets/image/icons/bold/shopping.svg";
+
+  /// Assets for imageIconsBoldUser
+  /// assets/image/icons/bold/user.svg
+  static const String imageIconsBoldUser = "assets/image/icons/bold/user.svg";
+
+  /// Assets for imageIconsOutlineHome
+  /// assets/image/icons/outline/home.svg
+  static const String imageIconsOutlineHome = "assets/image/icons/outline/home.svg";
+
+  /// Assets for imageIconsOutlineProdacte
+  /// assets/image/icons/outline/prodacte.svg
+  static const String imageIconsOutlineProdacte = "assets/image/icons/outline/prodacte.svg";
+
+  /// Assets for imageIconsOutlineShopping
+  /// assets/image/icons/outline/shopping.svg
+  static const String imageIconsOutlineShopping = "assets/image/icons/outline/shopping.svg";
+
+  /// Assets for imageIconsOutlineUser
+  /// assets/image/icons/outline/user.svg
+  static const String imageIconsOutlineUser = "assets/image/icons/outline/user.svg";
+
   /// Assets for imageImageTest
   /// assets/image/imageTest.png
   static const String imageImageTest = "assets/image/imageTest.png";
