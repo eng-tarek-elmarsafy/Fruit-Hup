@@ -42,6 +42,10 @@ class Assets {
   /// assets/image/googl_logo.svg
   static const String imageGooglLogo = "assets/image/googl_logo.svg";
 
+  /// Assets for imageImageTest
+  /// assets/image/imageTest.png
+  static const String imageImageTest = "assets/image/imageTest.png";
+
   /// Assets for imageLogo
   /// assets/image/logo.svg
   static const String imageLogo = "assets/image/logo.svg";

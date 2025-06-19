@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hup/core/helper/is_arabic.dart';
 import 'package:fruit_hup/features/home/presentation/views/widgets/feature_widget.dart';
 
 class ListVeiwFeatureWidget extends StatelessWidget {
@@ -11,9 +12,12 @@ class ListVeiwFeatureWidget extends StatelessWidget {
       child: Row(
         children: List.generate(
           4,
-          (index) => const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: FeatureWidget(),
+          (index) => Padding(
+            padding: EdgeInsets.only(
+              right: isArabic() ? 0 : 8,
+              left: isArabic() ? 8  : 0,
+            ),
+            child: const FeatureWidget(),
           ),
         ),
       ),

@@ -10,6 +10,7 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      contentPadding: const EdgeInsets.all(0),
       leading: Image.asset(Assets.imageProfile),
       title: Text(S.of(context).GoodMorning, style: AppStyle.basaRegular),
       subtitle: Text(
