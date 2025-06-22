@@ -15,7 +15,10 @@ class HedarBestSell extends StatelessWidget {
             'الأكثر مبيعًا',
             style: AppStyle.basaBold.copyWith(color: Colors.black),
           ),
-          const Text('المزيد', style: AppStyle.smallRegular),
+          TextButton(
+            onPressed: () {},
+            child: const Text('المزيد', style: AppStyle.smallRegular),
+          ),
         ],
       ),
     );

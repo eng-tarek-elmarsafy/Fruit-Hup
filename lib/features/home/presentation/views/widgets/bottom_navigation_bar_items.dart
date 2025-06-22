@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hup/features/home/domain/entities/navigation_bar_entity.dart';
 import 'package:fruit_hup/features/home/presentation/views/widgets/active_item_navigation_bar.dart';
+import 'package:fruit_hup/features/home/presentation/views/widgets/in_active_item_navigation_bar.dart';
 
 class BottomNavigationBarItems extends StatelessWidget {
   const BottomNavigationBarItems({

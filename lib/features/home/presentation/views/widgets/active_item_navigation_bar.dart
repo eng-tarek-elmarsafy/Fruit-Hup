@@ -33,14 +33,4 @@ class ActiveItemNavigationBar extends StatelessWidget {
   }
 }
 
-class InActiveItemNavigationBar extends StatelessWidget {
-  const InActiveItemNavigationBar({
-    super.key,
-    required this.navigationBarEntity,
-  });
-  final NavigationBarEntity navigationBarEntity;
-  @override
-  Widget build(BuildContext context) {
-    return SvgPicture.asset(navigationBarEntity.notActiveImage);
-  }
-}
+
