@@ -11,7 +11,7 @@ class FruitItem extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         color: Color.fromARGB(255, 243, 245, 247),
-        borderRadius: BorderRadius.all(Radius.circular(16)),
+        borderRadius: BorderRadius.all(Radius.circular(4)),
       ),
       child: Stack(
         children: [

@@ -18,7 +18,7 @@ class HomeViewBody extends StatelessWidget {
             SliverToBoxAdapter(
               child: Column(
                 children: [
-                  CustomAppBar(),
+                  HomeViewAppBar(),
                   SizedBox(height: 16),
                   SearchFor(),
                   SizedBox(height: 12),

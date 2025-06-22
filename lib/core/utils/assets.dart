@@ -14,6 +14,10 @@ class Assets {
   /// assets/image/arrow_back_border.svg
   static const String imageArrowBackBorder = "assets/image/arrow_back_border.svg";
 
+  /// Assets for imageArrowBackSvg
+  /// assets/image/arrow_back_svg.svg
+  static const String imageArrowBackSvg = "assets/image/arrow_back_svg.svg";
+
   /// Assets for imageCheckIcon
   /// assets/image/check_icon.svg
   static const String imageCheckIcon = "assets/image/check_icon.svg";

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hup/core/utils/app_style.dart';
+import 'package:fruit_hup/features/best_sell.dart/presentation/views/best_sell_view.dart';
 
 class HedarBestSell extends StatelessWidget {
   const HedarBestSell({super.key});
@@ -16,7 +17,9 @@ class HedarBestSell extends StatelessWidget {
             style: AppStyle.basaBold.copyWith(color: Colors.black),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, BestSellView.id);
+            },
             child: const Text('المزيد', style: AppStyle.smallRegular),
           ),
         ],

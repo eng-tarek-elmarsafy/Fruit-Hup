@@ -4,8 +4,8 @@ import 'package:fruit_hup/core/utils/assets.dart';
 import 'package:fruit_hup/features/home/presentation/views/widgets/notification_icon.dart';
 import 'package:fruit_hup/generated/l10n.dart';
 
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+class HomeViewAppBar extends StatelessWidget {
+  const HomeViewAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
