@@ -15,7 +15,8 @@ class FirebaseAuthService {
   Future<void> deleteUser() async {
     await FirebaseAuth.instance.currentUser!.delete();
   }
-//MARK:create account
+
+  //MARK:create account
   Future<User> createUserWithEmailAndPassword(
     String email,
     String password,
@@ -153,5 +154,10 @@ class FirebaseAuthService {
       throw CustomException(message: 'Failed to sign in with Apple.');
     }
     return userCredential.user!;
+  }
+
+  //MARK:isLogedin
+  static bool isLogedin() {
+    return FirebaseAuth.instance.currentUser != null;
   }
 }

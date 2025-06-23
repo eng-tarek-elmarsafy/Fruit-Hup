@@ -1,12 +1,15 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fruit_hup/constens.dart';
 import 'package:fruit_hup/core/error/custom_exception.dart';
 import 'package:fruit_hup/core/error/failure.dart';
 import 'package:fruit_hup/core/helper/backend_endpoints.dart';
 import 'package:fruit_hup/core/services/firebase_auth_service.dart';
 import 'package:fruit_hup/core/services/firebase_firestore_service.dart';
+import 'package:fruit_hup/core/services/shared_preferences.dart';
 import 'package:fruit_hup/features/auth/data/models/user_model.dart';
 import 'package:fruit_hup/features/auth/domain/entities/user_entitie.dart';
 import 'package:fruit_hup/features/auth/domain/repos/auth_repo.dart';
@@ -65,6 +68,7 @@ class AuthRepoImpl implements AuthRepo {
       );
 
       var userData = await getUserData(user.uid);
+      await saveUserData(userData);
       return right(userData);
     } on CustomException catch (e) {
       log('AuthRepoImpl.signInWithEmailAndPassword Exception is $e');
@@ -198,7 +202,7 @@ class AuthRepoImpl implements AuthRepo {
     firebaseFirestoreService.addData(
       BackendEndpoints.addUserData,
       user.uId,
-      user.toMap(),
+      UserModel.fromUserEntitiy(user).toMap(),
     );
   }
 
@@ -207,5 +211,11 @@ class AuthRepoImpl implements AuthRepo {
     if (user != null) {
       firebaseAuthService.deleteUser();
     }
+  }
+
+  @override
+  Future saveUserData(UserEntity user) async {
+    var jsonData = UserModel.fromUserEntitiy(user).toMap();
+    await Prefs.setString(kUserData, jsonEncode(jsonData));
   }
 }
