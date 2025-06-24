@@ -103,7 +103,9 @@ class AuthRepoImpl implements AuthRepo {
         user.uid,
       );
       if (isUserExist) {
-        return right(await getUserData(user.uid));
+        var userEntity = await getUserData(user.uid);
+        await saveUserData(userEntity);
+        return right(userEntity);
       } else {
         await addUser(userEntity);
       }
@@ -135,7 +137,9 @@ class AuthRepoImpl implements AuthRepo {
         user.uid,
       );
       if (isUserExist) {
-        return right(await getUserData(user.uid));
+        var userEntity = await getUserData(user.uid);
+        await saveUserData(userEntity);
+        return right(userEntity);
       } else {
         await addUser(userEntity);
       }
@@ -166,7 +170,9 @@ class AuthRepoImpl implements AuthRepo {
         user.uid,
       );
       if (isUserExist) {
-        return right(await getUserData(user.uid));
+        var userEntity = await getUserData(user.uid);
+        await saveUserData(userEntity);
+        return right(userEntity);
       } else {
         await addUser(userEntity);
       }

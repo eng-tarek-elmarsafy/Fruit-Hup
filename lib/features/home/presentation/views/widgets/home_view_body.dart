@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hup/features/home/presentation/views/widgets/custom_app_bar.dart';
+import 'package:fruit_hup/features/home/presentation/views/widgets/home_view_app_bar.dart';
 import 'package:fruit_hup/features/home/presentation/views/widgets/fruit_items_grid.dart';
 import 'package:fruit_hup/features/home/presentation/views/widgets/hedar_best_sell.dart';
 import 'package:fruit_hup/features/home/presentation/views/widgets/list_veiw_feature_widget.dart';
