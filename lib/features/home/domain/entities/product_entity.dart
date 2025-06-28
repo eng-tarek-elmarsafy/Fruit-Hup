@@ -1,7 +1,7 @@
 import 'package:fruit_hup/features/home/domain/entities/review_entity.dart';
 
-class ProductEntity {
-  ProductEntity({
+class ProaductEntity {
+  ProaductEntity({
     required this.isFeatured,
     required this.name,
     required this.price,

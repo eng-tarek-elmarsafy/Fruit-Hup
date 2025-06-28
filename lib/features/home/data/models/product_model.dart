@@ -1,7 +1,7 @@
 import 'package:fruit_hup/features/home/data/models/review_model.dart';
 import 'package:fruit_hup/features/home/domain/entities/product_entity.dart';
 
-class ProductModel extends ProductEntity {
+class ProductModel extends ProaductEntity {
   factory ProductModel.fromJson(Map<String, dynamic> json) {
     return ProductModel(
       name: json['name'] as String,
@@ -23,7 +23,7 @@ class ProductModel extends ProductEntity {
               .toList(),
     );
   }
-  factory ProductModel.fromEntity(ProductEntity entity) {
+  factory ProductModel.fromEntity(ProaductEntity entity) {
     return ProductModel(
       name: entity.name,
       price: entity.price,
