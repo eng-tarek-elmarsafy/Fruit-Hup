@@ -3,6 +3,8 @@ import 'package:fruit_hup/core/services/firebase_firestore_impl.dart';
 import 'package:fruit_hup/core/services/firebase_firestore_service.dart';
 import 'package:fruit_hup/features/auth/data/repos/auth_repo_impl.dart';
 import 'package:fruit_hup/features/auth/domain/repos/auth_repo.dart';
+import 'package:fruit_hup/features/home/data/repos/proaduct_repo_impl.dart';
+import 'package:fruit_hup/features/home/domain/repos/proaduct_repo.dart';
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;
@@ -15,6 +17,11 @@ void setup() {
   getIt.registerSingleton<AuthRepo>(
     AuthRepoImpl(
       firebaseAuthService: getIt.get<FirebaseAuthService>(),
+      firebaseFirestoreService: getIt.get<FirebaseFirestoreService>(),
+    ),
+  );
+  getIt.registerSingleton<ProaductRepo>(
+    ProaductRepoImpl(
       firebaseFirestoreService: getIt.get<FirebaseFirestoreService>(),
     ),
   );
