@@ -25,7 +25,7 @@ class BestSellViewBody extends StatelessWidget {
               crossAxisSpacing: 16,
               childAspectRatio: 163 / 214,
             ),
-            itemBuilder: (context, index) => const FruitItem(),
+            itemBuilder: (context, index) => const SizedBox.shrink(),
           ),
         ],
       ),
