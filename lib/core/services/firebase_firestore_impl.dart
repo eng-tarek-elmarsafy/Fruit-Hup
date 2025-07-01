@@ -9,7 +9,6 @@ class FirebaseFirestoreServiceImpl implements FirebaseFirestoreService {
     String? uId,
     Map<String, dynamic> data,
   ) async {
-    // final FirebaseFirestore firestore = FirebaseFirestore.instance;
     if (uId != null) {
       await firestore.collection(path).doc(uId).set(data);
     } else {
@@ -18,22 +17,21 @@ class FirebaseFirestoreServiceImpl implements FirebaseFirestoreService {
   }
 
   @override
-  Future<Map<String, dynamic>> getData(String path, String uId) async {
-    var data = await firestore.collection(path).doc(uId).get();
+  Future<dynamic> getData(String path, {String? uId}) async {
+    if (uId != null) {
+      var data = await firestore.collection(path).doc(uId).get();
 
-    return data.data() as Map<String, dynamic>;
+      return data.data() as Map<String, dynamic>;
+    } else {
+      var data = await firestore.collection(path).get();
+
+      return data.docs.map((e) => e.data()).toList();
+    }
   }
 
   @override
   Future<bool> checkIfDataExists(String path, String uId) async {
     var data = await firestore.collection(path).doc(uId).get();
     return data.exists;
-  }
-
-  @override
-  Future<List<Map<String, dynamic>>> getProaduct(String path) async {
-    var data = await firestore.collection(path).get();
-
-    return data.docs.map((e) => e.data()).toList();
   }
 }

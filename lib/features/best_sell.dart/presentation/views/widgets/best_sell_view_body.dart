@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hup/core/utils/app_style.dart';
-import 'package:fruit_hup/core/widgets/fruit_item.dart';
 import 'package:fruit_hup/features/best_sell.dart/presentation/views/widgets/best_sell_app_bar.dart';
 
 class BestSellViewBody extends StatelessWidget {

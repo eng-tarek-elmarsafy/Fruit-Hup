@@ -195,7 +195,7 @@ class AuthRepoImpl implements AuthRepo {
   Future<UserEntity> getUserData(String uId) async {
     var data = await firebaseFirestoreService.getData(
       BackendEndpoints.getUserData,
-      uId,
+      uId: uId,
     );
 
     UserEntity userEntity = UserModel.fromJson(data);

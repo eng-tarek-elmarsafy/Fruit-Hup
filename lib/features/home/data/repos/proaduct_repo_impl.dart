@@ -14,13 +14,13 @@ class ProaductRepoImpl extends ProaductRepo {
   Future<Either<Failure, List<ProaductEntity>>> getProaducts(
     String path,
   ) async {
-    List<ProaductEntity> proaducts = [];
     try {
-      var data = await firebaseFirestoreService.getProaduct(path);
+      var data =
+          await firebaseFirestoreService.getData(path)
+              as List<Map<String, dynamic>>;
 
-      for (var proaduct in data) {
-        proaducts.add(ProductModel.fromJson(proaduct));
-      }
+      List<ProaductEntity> proaducts =
+          data.map((e) => ProductModel.fromJson(e)).toList();
 
       return right(proaducts);
     } catch (e) {
