@@ -16,7 +16,7 @@ class ProaductRepoImpl extends ProaductRepo {
   ) async {
     try {
       var data =
-          firebaseFirestoreService.getData(path: path)
+          await firebaseFirestoreService.getData(path: path)
               as List<Map<String, dynamic>>;
 
       List<ProaductEntity> proaducts =

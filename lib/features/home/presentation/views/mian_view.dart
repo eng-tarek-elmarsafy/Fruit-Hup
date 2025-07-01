@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_hup/core/helper/get_it_setup.dart';
+import 'package:fruit_hup/features/home/domain/repos/proaduct_repo.dart';
+import 'package:fruit_hup/features/home/presentation/manager/proaducts_cubit/proaducts_cubit.dart';
 import 'package:fruit_hup/features/home/presentation/views/widgets/bottom_navigation_bar.dart';
 import 'package:fruit_hup/features/home/presentation/views/widgets/home_view.dart';
 
@@ -8,9 +12,12 @@ class MainView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: HomeView(),
-      bottomNavigationBar: CustomBottomNavigationBar(),
+    return Scaffold(
+      body: BlocProvider(
+        create: (context) => ProaductsCubit(getIt.get<ProaductRepo>()),
+        child: const HomeView(),
+      ),
+      bottomNavigationBar: const CustomBottomNavigationBar(),
     );
   }
 }

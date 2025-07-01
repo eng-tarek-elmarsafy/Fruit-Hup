@@ -13,4 +13,8 @@ final class ProaductsFailuer extends ProaductsState {
   final String err;
 }
 
-final class ProaductsSuccess extends ProaductsState {}
+final class ProaductsSuccess extends ProaductsState {
+  ProaductsSuccess({required this.proaducts});
+
+ final List<ProaductEntity> proaducts;
+}

@@ -10,18 +10,24 @@ class ProaductsCubit extends Cubit<ProaductsState> {
   ProaductsCubit(this.proaductRepo) : super(ProaductsInitial());
   final ProaductRepo proaductRepo;
 
-  List<ProaductEntity> proaducts = [];
-
   Future<void> getProaducts() async {
     emit(ProaductsLoading());
 
     var resilt = await proaductRepo.getProaducts(BackendEndpoints.getProaduct);
 
-    resilt.fold((failure) => emit(ProaductsFailuer(err: failure.message)), (
-      listOfProaduct,
-    ) {
-      proaducts = listOfProaduct;
-      emit(ProaductsSuccess());
-    });
+    resilt.fold(
+      (failure) => emit(ProaductsFailuer(err: failure.message)),
+      (listOfProaduct) => emit(ProaductsSuccess(proaducts: listOfProaduct)),
+    );
+  }
+
+  Future<void> getTheBestSellingProaducts() async {
+    var result = await proaductRepo.getTheBestSellingProaducts(
+      BackendEndpoints.getProaduct,
+    );
+    result.fold(
+      (failure) => emit(ProaductsFailuer(err: failure.message)),
+      (listOfProaduct) => emit(ProaductsSuccess(proaducts: listOfProaduct)),
+    );
   }
 }
