@@ -194,7 +194,7 @@ class AuthRepoImpl implements AuthRepo {
   @override
   Future<UserEntity> getUserData(String uId) async {
     var data = await firebaseFirestoreService.getData(
-      BackendEndpoints.getUserData,
+      path: BackendEndpoints.getUserData,
       uId: uId,
     );
 

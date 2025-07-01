@@ -8,6 +8,7 @@ class ProaductEntity {
     required this.code,
     required this.description,
     this.imageUrl,
+    this.sellingCount = 0,
     required this.expirationsMonths,
     required this.isOrganic,
     required this.numberOfCaloris,
@@ -29,4 +30,5 @@ class ProaductEntity {
   final num ratingCount;
   final num unitAmount;
   final List<ReviewEntity> review;
+  int sellingCount;
 }

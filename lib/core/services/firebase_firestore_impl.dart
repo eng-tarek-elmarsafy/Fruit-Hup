@@ -17,21 +17,38 @@ class FirebaseFirestoreServiceImpl implements FirebaseFirestoreService {
   }
 
   @override
-  Future<dynamic> getData(String path, {String? uId}) async {
+  Future<bool> checkIfDataExists(String path, String uId) async {
+    var data = await firestore.collection(path).doc(uId).get();
+    return data.exists;
+  }
+
+  @override
+  Future getData({
+    required String path,
+    Map<String, dynamic>? filter,
+    String? uId,
+  }) async {
     if (uId != null) {
       var data = await firestore.collection(path).doc(uId).get();
 
       return data.data() as Map<String, dynamic>;
     } else {
-      var data = await firestore.collection(path).get();
+      Query<Map<String, dynamic>> data = firestore.collection(path);
 
-      return data.docs.map((e) => e.data()).toList();
+      if (filter != null) {
+        if (filter['orderBy'] != null) {
+          data = data.orderBy(
+            filter['orderBy'],
+            descending: filter['descending'],
+          );
+        }
+        if (filter['limit'] != null) {
+          data = data.limit(filter['limit']);
+        }
+      }
+
+      var resuilt = await data.get();
+      return resuilt.docs.map((e) => e.data()).toList();
     }
-  }
-
-  @override
-  Future<bool> checkIfDataExists(String path, String uId) async {
-    var data = await firestore.collection(path).doc(uId).get();
-    return data.exists;
   }
 }
