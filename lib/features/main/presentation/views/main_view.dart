@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hup/features/cart/presentation/views/cart_view.dart';
 import 'package:fruit_hup/features/home/presentation/views/widgets/bottom_navigation_bar.dart';
-import 'package:fruit_hup/features/home/presentation/views/widgets/home_view.dart';
+import 'package:fruit_hup/features/home/presentation/views/home_view.dart';
 import 'package:fruit_hup/features/proaducts/presentation/views/proaducts_view.dart';
 
 class MainView extends StatefulWidget {
@@ -22,7 +23,7 @@ class _MainViewState extends State<MainView> {
         children: const [
           HomeView(),
           ProaductsView(),
-          Placeholder(),
+          CartView(),
           Placeholder(),
         ],
       ),
