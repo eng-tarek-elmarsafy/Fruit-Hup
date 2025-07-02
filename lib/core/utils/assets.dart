@@ -137,5 +137,9 @@ class Assets {
   /// Assets for imageSuccess
   /// assets/image/success.svg
   static const String imageSuccess = "assets/image/success.svg";
+
+  /// Assets for imageTrash
+  /// assets/image/trash.svg
+  static const String imageTrash = "assets/image/trash.svg";
 }
 
