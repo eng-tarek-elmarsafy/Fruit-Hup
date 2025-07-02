@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:fruit_hup/core/widgets/fruit_item.dart';
 import 'package:fruit_hup/features/home/domain/entities/product_entity.dart';
 
-class FruitItemsGrid extends StatefulWidget {
-  const FruitItemsGrid({super.key, required this.proaducts});
+class ProaductGrid extends StatefulWidget {
+  const ProaductGrid({super.key, required this.proaducts});
   final List<ProaductEntity> proaducts;
   @override
-  State<FruitItemsGrid> createState() => _FruitItemsGridState();
+  State<ProaductGrid> createState() => _ProaductGridState();
 }
 
-class _FruitItemsGridState extends State<FruitItemsGrid> {
+class _ProaductGridState extends State<ProaductGrid> {
   @override
   Widget build(BuildContext context) {
     return SliverGrid.builder(

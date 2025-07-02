@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hup/features/home/domain/entities/product_entity.dart';
+import 'package:fruit_hup/features/home/presentation/views/widgets/home_view_body.dart';
 import 'package:fruit_hup/features/home/presentation/views/widgets/search_for.dart';
 import 'package:fruit_hup/features/proaducts/presentation/views/widgets/custom_proaducts_app_bar.dart';
-import 'package:fruit_hup/features/proaducts/presentation/views/widgets/fruit_bar.dart';
 import 'package:fruit_hup/features/proaducts/presentation/views/widgets/hedar_fruit_bar.dart';
 
 class ProaductsViewBody extends StatelessWidget {
@@ -14,20 +14,22 @@ class ProaductsViewBody extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: CustomScrollView(
         slivers: [
-          const SliverToBoxAdapter(
+          SliverToBoxAdapter(
             child: SafeArea(
               child: Column(
                 children: [
-                  CustomProaductsAppBar(),
-                  SizedBox(height: 16),
-                  SearchFor(),
-                  SizedBox(height: 16),
-                  HedarFruitBar(),
+                  const CustomProaductsAppBar(),
+                  const SizedBox(height: 16),
+                  const SearchFor(),
+                  const SizedBox(height: 16),
+                  HedarFruitBar(proaduct: proaducts),
                 ],
               ),
             ),
           ),
-          SliverToBoxAdapter(child: FruitBar(proaducts: proaducts)),
+
+          // SliverToBoxAdapter(child: FruitBar(proaducts: proaducts)),
+          const ProaductGridViewBlocBuilder(),
         ],
       ),
     );
