@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hup/core/widgets/custom_proaducts_app_bar.dart';
+import 'package:fruit_hup/features/cart/presentation/views/widgets/cart_view_body.dart';
 
 class CartView extends StatelessWidget {
   const CartView({super.key});
@@ -7,23 +7,5 @@ class CartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const CartViewBody();
-  }
-}
-
-class CartViewBody extends StatelessWidget {
-  const CartViewBody({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const SafeArea(
-      child: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: CustomAppBar(titlel: 'السلة', backIconVisibilty: true),
-          ),
-        ],
-      ),
-    );
   }
 }
