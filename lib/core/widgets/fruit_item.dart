@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hup/core/utils/app_color.dart';
 import 'package:fruit_hup/core/utils/app_style.dart';
+import 'package:fruit_hup/core/widgets/custom_network_image.dart';
 import 'package:fruit_hup/features/home/domain/entities/product_entity.dart';
 
 class FruitItem extends StatelessWidget {
@@ -28,9 +29,15 @@ class FruitItem extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(height: 17),
-                Flexible(
-                  child: Image.network(proaduct.imageUrl!, fit: BoxFit.contain),
-                ),
+                proaduct.imageUrl != null
+                    ? Flexible(child: CustomNetworkImage(proaduct: proaduct))
+                    : Expanded(
+                      child: Container(
+                        color: Colors.amber,
+                        width: 120,
+                        height: 10,
+                      ),
+                    ),
                 Align(
                   alignment: Alignment.centerRight,
                   child: Text(proaduct.name, style: AppStyle.smallBold),

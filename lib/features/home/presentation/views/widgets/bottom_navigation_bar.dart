@@ -4,8 +4,8 @@ import 'package:fruit_hup/features/home/domain/entities/navigation_bar_entity.da
 import 'package:fruit_hup/features/home/presentation/views/widgets/bottom_navigation_bar_items.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
-  const CustomBottomNavigationBar({super.key});
-
+  const CustomBottomNavigationBar({super.key, required this.onChanged});
+  final ValueChanged<int> onChanged;
   @override
   State<CustomBottomNavigationBar> createState() =>
       _CustomBottomNavigationBarState();
@@ -43,6 +43,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                 return GestureDetector(
                   onTap: () {
                     selectedTabIndex = index;
+                    widget.onChanged(index);
                     setState(() {});
                   },
                   child: BottomNavigationBarItems(

@@ -22,6 +22,7 @@ class ProaductsCubit extends Cubit<ProaductsState> {
   }
 
   Future<void> getTheBestSellingProaducts() async {
+    emit(ProaductsLoading());
     var result = await proaductRepo.getTheBestSellingProaducts(
       BackendEndpoints.getProaduct,
     );
