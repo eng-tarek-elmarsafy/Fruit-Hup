@@ -4,11 +4,12 @@ import 'package:fruit_hup/core/helper/is_arabic.dart';
 import 'package:fruit_hup/core/utils/app_color.dart';
 import 'package:fruit_hup/core/utils/app_style.dart';
 import 'package:fruit_hup/core/utils/assets.dart';
+import 'package:fruit_hup/features/cart/domain/entities/cart_item_entity.dart';
 import 'package:fruit_hup/features/cart/presentation/views/widgets/cart_action_add_or_dele.dart';
 
 class CartItemProaduct extends StatelessWidget {
-  const CartItemProaduct({super.key});
-
+  const CartItemProaduct({super.key, required this.cartItem});
+  final CartItemEntity cartItem;
   @override
   Widget build(BuildContext context) {
     return IntrinsicHeight(
@@ -32,7 +33,10 @@ class CartItemProaduct extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      const Text('بطيخ', style: AppStyle.smallBold),
+                      Text(
+                        cartItem.proaductEntity.name,
+                        style: AppStyle.smallBold,
+                      ),
                       const Spacer(),
                       GestureDetector(
                         onTap: () {},
@@ -41,7 +45,7 @@ class CartItemProaduct extends StatelessWidget {
                     ],
                   ),
                   Text(
-                    '3 كم',
+                    '${cartItem.proaductEntity.unitAmount} كم',
                     style: AppStyle.smallRegular.copyWith(
                       color: AppColor.orange500,
                     ),
@@ -57,7 +61,7 @@ class CartItemProaduct extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: Text(
-                          '3',
+                          cartItem.count.toString(),
                           style: AppStyle.basaBold.copyWith(
                             color: Colors.black,
                             fontSize: 19,
